@@ -1,1 +1,1 @@
-# Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA
+# Analise Exploratoria e Previsao de Arremessos da NBA
