@@ -11,6 +11,25 @@
 # Linguagem, Bibliotecas e Pacotes
     
 O trabalho foi feito todo em Python 3. Abaixo, segue a listagem de todas bibliotecas e pacotes utilizados:
+
+    #Import Libs
+
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    import os
+    import missingno as msno
+    from pandas_profiling import ProfileReport
+    import plotly.express as px
+    import matplotlib as mpl
+    import time
+    from matplotlib.patches import Circle, Rectangle, Arc, ConnectionPatch
+    from matplotlib.patches import Polygon
+    from matplotlib.collections import PatchCollection
+    from matplotlib.colors import LinearSegmentedColormap, ListedColormap, BoundaryNorm
+    from matplotlib.path import Path
+    from matplotlib.patches import PathPatch
     
 # Leitura dos Dados
 
