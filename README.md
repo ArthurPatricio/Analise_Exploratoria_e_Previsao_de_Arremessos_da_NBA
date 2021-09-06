@@ -32,7 +32,7 @@ Foi utulizado a biblioteca missingno para realizar a checagem.
 Foi gerado o 'Pandas Profile Report' que oferece uma análise extensa do conjunto de dados que está sendo abordado.
     
 
-#Função para desenhar a quadra
+# Função para desenhar a quadra
 
 A função 'create_court' abaixo foi obtida do seguinte artigo: 
     
