@@ -61,6 +61,42 @@ As 6 planilhas foram importandas e inseridas em Dataframes utilizando a bibliote
     
 Cada Dataframe tem a coluna "Unnamed: 0" retirada e a coluna "SEASON_ID" adicionada sendo inserida a respectiva temporada do Dataframe em questão.
 
+#Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2020_21
+
+nba_shots_2020_21.drop(['Unnamed: 0'], axis=1, inplace=True)
+nba_shots_2020_21['SEASON_ID'] = '2020-21'
+nba_shots_2020_21.head()
+
+#Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2019_20
+
+nba_shots_2019_20.drop(['Unnamed: 0'], axis=1, inplace=True)
+nba_shots_2019_20['SEASON_ID'] = '2019-20'
+nba_shots_2019_20.head()
+
+#Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2018_19
+
+nba_shots_2018_19.drop(['Unnamed: 0'], axis=1, inplace=True)
+nba_shots_2018_19['SEASON_ID'] = '2018-19'
+nba_shots_2018_19.head()
+
+#Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2017_18
+
+nba_shots_2017_18.drop(['Unnamed: 0'], axis=1, inplace=True)
+nba_shots_2017_18['SEASON_ID'] = '2017-18'
+nba_shots_2017_18.head()
+
+#Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2016_17
+
+nba_shots_2016_17.drop(['Unnamed: 0'], axis=1, inplace=True)
+nba_shots_2016_17['SEASON_ID'] = '2016-17'
+nba_shots_2016_17.head()
+
+#Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2015_16
+
+nba_shots_2015_16.drop(['Unnamed: 0'], axis=1, inplace=True)
+nba_shots_2015_16['SEASON_ID'] = '2015-16'
+nba_shots_2015_16.head()
+
 Os 6 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shots'.
 
 
