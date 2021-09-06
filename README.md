@@ -189,6 +189,8 @@ Foi utilizado a biblioteca missingno para realizar a checagem.
 # Relatório Pandas Profile
 
 Foi gerado o 'Pandas Profile Report' que oferece uma análise extensa do conjunto de dados que está sendo abordado.
+
+- (https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/nba_shots_pandas_profile_report.html)
     
 
 # Função para desenhar a quadra
