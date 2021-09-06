@@ -139,6 +139,43 @@ Os 6 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shots
     50%	2.180042e+07	298.000000	2.035000e+05	1.610613e+09	2.000000	5.000000	29.000000	12.000000	0.000000	51.000000	1.0	0.000000	2.018121e+07
     75%	2.190073e+07	454.000000	1.627741e+06	1.610613e+09	3.000000	8.000000	44.000000	24.000000	43.000000	175.000000	1.0	1.000000	2.020020e+07
     max	2.200108e+07	1012.000000	1.630466e+06	1.610613e+09	8.000000	12.000000	59.000000	87.000000	250.000000	867.000000	1.0	1.000000	2.021052e+07
+    
+    #Get nba_shots dataframe info
+
+    nba_shots.info()
+    
+    <class 'pandas.core.frame.DataFrame'>
+    Int64Index: 989617 entries, 0 to 123985
+    Data columns (total 25 columns):
+     #   Column               Non-Null Count   Dtype 
+    ---  ------               --------------   ----- 
+     0   GRID_TYPE            989617 non-null  object
+     1   GAME_ID              989617 non-null  int64 
+     2   GAME_EVENT_ID        989617 non-null  int64 
+     3   PLAYER_ID            989617 non-null  int64 
+     4   PLAYER_NAME          989583 non-null  object
+     5   TEAM_ID              989617 non-null  int64 
+     6   TEAM_NAME            989617 non-null  object
+     7   PERIOD               989617 non-null  int64 
+     8   MINUTES_REMAINING    989617 non-null  int64 
+     9   SECONDS_REMAINING    989617 non-null  int64 
+     10  EVENT_TYPE           989617 non-null  object
+     11  ACTION_TYPE          989617 non-null  object
+     12  SHOT_TYPE            989617 non-null  object
+     13  SHOT_ZONE_BASIC      989617 non-null  object
+     14  SHOT_ZONE_AREA       989617 non-null  object
+     15  SHOT_ZONE_RANGE      989617 non-null  object
+     16  SHOT_DISTANCE        989617 non-null  int64 
+     17  LOC_X                989617 non-null  int64 
+     18  LOC_Y                989617 non-null  int64 
+     19  SHOT_ATTEMPTED_FLAG  989617 non-null  int64 
+     20  SHOT_MADE_FLAG       989617 non-null  int64 
+     21  GAME_DATE            989617 non-null  int64 
+     22  HTM                  989617 non-null  object
+     23  VTM                  989617 non-null  object
+     24  SEASON_ID            989617 non-null  object
+    dtypes: int64(13), object(12)
+    memory usage: 216.3+ MB
 
 # Checagem de valores nulos
 
