@@ -31,6 +31,21 @@ O trabalho foi feito todo em Python 3. Abaixo, segue a listagem de todas bibliot
     from matplotlib.path import Path
     from matplotlib.patches import PathPatch
     
+    # Import Libs
+
+    from sklearn.feature_selection import VarianceThreshold
+    from sklearn.model_selection import train_test_split
+    from sklearn.svm import SVC
+    from sklearn.svm import LinearSVC
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn import tree
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.model_selection import GridSearchCV
+    from sklearn.metrics import classification_report
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.ensemble import GradientBoostingClassifier
+    import xgboost as xgb
+    
 # Leitura dos Dados
 
 As 6 planilhas foram importandas e inseridas em Dataframes utilizando a biblioteca pandas.
