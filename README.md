@@ -181,7 +181,7 @@ Os 6 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shots
 
 nba_shots não possui nenhum valor faltante.
 
-Foi utulizado a biblioteca missingno para realizar a checagem.
+Foi utilizado a biblioteca missingno para realizar a checagem.
     
     
 # Relatório Pandas Profile
