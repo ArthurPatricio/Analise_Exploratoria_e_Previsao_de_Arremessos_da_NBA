@@ -182,6 +182,8 @@ Os 6 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shots
 nba_shots não possui nenhum valor faltante.
 
 Foi utilizado a biblioteca missingno para realizar a checagem.
+
+![Missingno_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/missingno_plot.png)
     
     
 # Relatório Pandas Profile
