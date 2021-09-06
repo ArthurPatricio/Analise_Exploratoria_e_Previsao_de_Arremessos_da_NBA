@@ -8,7 +8,7 @@
 
 - (https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA) 
 
-#Linguagem, Bibliotecas e Pacotes
+# Linguagem, Bibliotecas e Pacotes
     O trabalho foi feito todo em Python 3. Abaixo, segue a listagem de todas bibliotecas e pacotes utilizados:
     
 # Leitura dos Dados
