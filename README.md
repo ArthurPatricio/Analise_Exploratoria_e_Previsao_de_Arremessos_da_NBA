@@ -315,6 +315,8 @@ Em ambas os sub conjuntos sofrem as seguintes operações:
 
 * Normalização: Os dados das bases de Treino e Teste foram normalizados.
 
+Para o treinamento dos modelos que virão a seguir, iremos trabalhar com o sub conjunto de arremessos da temporada regular de 2020-21 da liga. 
+
 Funcão choose_player
 
         # Due to the large amount of the dataset, everything past this point you be done per player. The function below creates a sub dataset from nba_shots with the data form the chosen player. 
