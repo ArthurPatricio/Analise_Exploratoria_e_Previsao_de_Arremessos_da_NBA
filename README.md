@@ -207,8 +207,13 @@ Esta função cria desenha uma quadra de basquete nas proporções da NBA utiliz
 
 # 1. Arremessos por Jogador
 
-De ínicio foram plotados todos os arremessos tentados na temporada 20-21 de 3 atletas da liga (James Harden, Stephen Curry e Nikola Jokic). 
-    
+De ínicio foram plotados todos os arremessos tentados na temporada 2020-21 de 3 atletas da liga (James Harden, Stephen Curry e Nikola Jokic). 
+ 
+![james_harden_2020-21_shot_chart](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/james_harden_2020-21_shot_chart.png)
+
+![stephen_curry_2020-21_shot_chart](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/stephen_curry_2020-21_shot_chart.png)
+
+![nikola_jokic_2020-21_shot_chart](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/nikola_jokic_2020-21_shot_chart.png)
 
 # 2. Arremessos Acertados por Temporada
 
