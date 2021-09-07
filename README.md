@@ -205,12 +205,12 @@ Esta função cria desenha uma quadra de basquete nas proporções da NBA utiliz
 # Análise Exploratória
 
 
-# 1.Arremessos por Jogador
+# 1. Arremessos por Jogador
 
 De ínicio foram plotados todos os arremessos tentados na temporada 20-21 de 3 atletas da liga (James Harden, Stephen Curry e Nikola Jokic). 
     
 
-# 2.Arremessos Acertados por Temporada
+# 2. Arremessos Acertados por Temporada
 
 Abaixo temos as plotagens utilizando a função .hexbin da biblioteca matplotlib.
 
@@ -219,7 +219,7 @@ Nessa sequência de gráficos possível notar como o arremesso de 3 pontos se to
 *Arremessos não incluem ações ofensivas como bandejas e enterradas, que são feitas próximas da cesta e que continuam proeminentes na liga como pode ser notado em todas as imagens.
     
 
-# 3.Outras Visualizações de Arremessos
+# 3. Outras Visualizações de Arremessos
 
 Os dados obtidos permitem ainda outras plotagens dos arremessos a seguir são mostradas 3 diferentes formas de enxergar os arremessos de acordo com sua posição em quadra.
     
@@ -239,7 +239,7 @@ Arremessos acertados por regiões da quadra (simplificado).
 O atributo 'SHOT_ZONE_BASIC' oferece regiões da quadra, diferentes das presentes em 'SHOT_ZONE_AREA', utilizadas nessa plotagem.
     
 
-# 4.Distribuição de arrmessos por distância e tipo de Arremesso (2 ou 3 pontos)
+# 4. Distribuição de arrmessos por distância e tipo de Arremesso (2 ou 3 pontos)
 
 O gráfico abaixo apresenta a distribuição dos arremessos das 6 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso ((2 ou 3 pontos)).
 
@@ -254,7 +254,7 @@ O gráfico a seguir mostra todos os arremessos tentados nas 6 temporadas pelo ti
 O gráfico a seguir mostra todos os arremessos tentados nas 6 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos) e resultado do arremesso.
 
 
-# 5.Arremessos por Tipo de Acão ofensiva
+# 6. Arremessos por Tipo de Acão ofensiva
 
 O gráfico abaixo mostra todos os arremesoss tentados nas 6 temporadas pelo tipo de ação ofensiva.
 
