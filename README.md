@@ -304,16 +304,16 @@ Foram criadas duas funções 'choose_player' e 'choose_season'. 'choose_player' 
 
 Em ambas os sub conjuntos sofrem as seguintes operações:
     
-. Redução de Dimensão: Os atributos 'PLAYER_NAME', 'EVENT_TYPE' e 'TEAM_NAME' são retirados por serem redundantes.
+* Redução de Dimensão: Os atributos 'PLAYER_NAME', 'EVENT_TYPE' e 'TEAM_NAME' são retirados por serem redundantes.
 
-. Dummy Coding: Aplicado nos seguintes atrobutos categóricos  'GRID_TYPE', 'ACTION_TYPE', 'SHOT_TYPE', 'SHOT_ZONE_BASIC', 
+* Dummy Coding: Aplicado nos seguintes atrobutos categóricos  'GRID_TYPE', 'ACTION_TYPE', 'SHOT_TYPE', 'SHOT_ZONE_BASIC', 
       'SHOT_ZONE_AREA', 'SHOT_ZONE_RANGE', 'HTM', 'VTM' e 'SEASON_ID'.
 
-. Train/Test split: Os conjuntos de Treino e Teste foram criados.
+* Train/Test split: Os conjuntos de Treino e Teste foram criados.
 
-. Checagem e tratamento de atributos vom variância igual a zero: Foram calculadas as variâncias de todos os atributos e os com valor 0 foram retirados das bases de Treino e Teste.
+* Checagem e tratamento de atributos vom variância igual a zero: Foram calculadas as variâncias de todos os atributos e os com valor 0 foram retirados das bases de Treino e Teste.
 
-. Normalização: Os dados das bases de Treino e Teste foram normalizados.
+* Normalização: Os dados das bases de Treino e Teste foram normalizados.
 
 
     
