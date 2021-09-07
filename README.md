@@ -431,10 +431,20 @@ Função choose_season
     
 Os conjunots de Treino e Teste do sub conjunto temporada regular 2020-21 ficaram com os seguintes formatos:
 
-    X_train: (152786, 130)
-    X_test: (38197, 130)
-    y_train: (152786,)
-    y_test: (38197,)
+* X_train: (152786, 130)
+* X_test: (38197, 130)
+* y_train: (152786,)
+* y_test: (38197,)
+    
+
+Para todos os modelos treinados foi utuilizado o GridSaerchCV do Sklearn para realizar a tunagem de Hiper-parâmetros 
+    
+    
+# SVM
+
+    
+
+
 
 
 
