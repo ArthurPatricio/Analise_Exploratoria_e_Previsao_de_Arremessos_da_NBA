@@ -427,6 +427,17 @@ Função choose_season
         return X_train, X_test, y_train, y_test
 
     X_train, X_test, y_train, y_test = choose_season('2020-21')
+    
+    
+Os conjunots de Treino e Teste do sub conjunto temporada regular 2020-21 ficaram com os seguintes formatos:
+
+    X_train: (152786, 130)
+    X_test: (38197, 130)
+    y_train: (152786,)
+    y_test: (38197,)
+
+
+
 
 
 
