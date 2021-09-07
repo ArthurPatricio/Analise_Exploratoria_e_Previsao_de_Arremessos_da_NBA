@@ -315,6 +315,118 @@ Em ambas os sub conjuntos sofrem as seguintes operações:
 
 * Normalização: Os dados das bases de Treino e Teste foram normalizados.
 
+Funcão choose_player
+
+        # Due to the large amount of the dataset, everything past this point you be done per player. The function below creates a sub dataset from nba_shots with the data form the chosen player. 
+
+    def choose_player (player_name):
+        player_shots = nba_shots[nba_shots['PLAYER_NAME'] == player_name]
+        print(player_shots.head())
+
+        # Dimensional Reduction: Columns PLAYER_ID and PLAYER_NAME carry the same type of information, PLAYER_NAME is going to be droped. 
+        # The same happens to columns EVENT_TYPE and SHOT_MADE_FLAG, EVENT_TYPE is going to be droped.
+        # It also happens for TEAM_ID and TEAM_NAME, TEAM_NAME is going to be droped.
+
+        nba_shots_ml = player_shots.drop(['PLAYER_NAME', 'EVENT_TYPE', 'TEAM_NAME'], axis = 1)
+
+        # Apply Dummy Coding to the categorial attributes of the dataset
+
+        categorical_columns = ['GRID_TYPE', 'ACTION_TYPE', 'SHOT_TYPE', 'SHOT_ZONE_BASIC', 
+        'SHOT_ZONE_AREA', 'SHOT_ZONE_RANGE', 'HTM', 'VTM', 'SEASON_ID']
+
+        for i in categorical_columns:
+
+            nba_shots_ml = pd.get_dummies(nba_shots_ml, columns=[i], drop_first=True)
+
+        #Train/Test split
+
+        X = nba_shots_ml.loc[:, nba_shots_ml.columns != 'SHOT_MADE_FLAG']
+        y = nba_shots_ml['SHOT_MADE_FLAG']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, 
+                                                            test_size= 0.3, 
+                                                            random_state = 100, 
+                                                            stratify = y,
+                                                            )
+
+        # Check columns with variance equal to zero and drop them
+
+        zero_var_filter = VarianceThreshold()
+        X_train = zero_var_filter.fit_transform(X_train)
+        X_test = zero_var_filter.transform(X_test)
+        print('X_train e X_test possuíam', (zero_var_filter.variances_ == 0).sum(), 'atributo(s) com variância igual a zero')
+
+        print('X_train:', X_train.shape)
+        print('X_test:', X_test.shape)
+        print('y_train:', y_train.shape)
+        print('y_test:', y_test.shape)
+
+        # Normalize the data
+
+        scaler = StandardScaler().fit(X_train)
+        X_train = scaler.transform(X_train)
+        X_test = scaler.transform(X_test)
+
+        return X_train, X_test, y_train, y_test
+
+    X_train, X_test, y_train, y_test = choose_player('Stephen Curry')
+    
+    
+Função choose_season
+
+        # Due to the large amount of the dataset, everything past this point you be done per season. The function below creates a sub dataset from nba_shots with the data form the chosen season. 
+
+    def choose_season (season_id):
+        season_shots = nba_shots[nba_shots['SEASON_ID'] == season_id]
+        print(season_shots.head())
+
+        # Dimensional Reduction: Columns PLAYER_ID and PLAYER_NAME carry the same type of information, PLAYER_NAME is going to be droped. 
+        # The same happens to columns EVENT_TYPE and SHOT_MADE_FLAG, EVENT_TYPE is going to be droped.
+        # It also happens for TEAM_ID and TEAM_NAME, TEAM_NAME is going to be droped.
+
+        nba_shots_ml = season_shots.drop(['PLAYER_NAME', 'EVENT_TYPE', 'TEAM_NAME'], axis = 1)
+
+        # Apply Dummy Coding to the categorial attributes of the dataset
+
+        categorical_columns = ['GRID_TYPE', 'ACTION_TYPE', 'SHOT_TYPE', 'SHOT_ZONE_BASIC', 
+        'SHOT_ZONE_AREA', 'SHOT_ZONE_RANGE', 'HTM', 'VTM', 'SEASON_ID']
+
+        for i in categorical_columns:
+
+            nba_shots_ml = pd.get_dummies(nba_shots_ml, columns=[i], drop_first=True)
+
+        #Train/Test split
+
+        X = nba_shots_ml.loc[:, nba_shots_ml.columns != 'SHOT_MADE_FLAG']
+        y = nba_shots_ml['SHOT_MADE_FLAG']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, 
+                                                            test_size= 0.2, 
+                                                            random_state = 100, 
+                                                            #stratify = y
+                                                            )
+
+        # Check columns with variance equal to zero and drop them
+
+        zero_var_filter = VarianceThreshold()
+        X_train = zero_var_filter.fit_transform(X_train)
+        X_test = zero_var_filter.transform(X_test)
+        print('X_train e X_test possuíam', (zero_var_filter.variances_ == 0).sum(), 'atributo(s) com variância igual a zero')
+
+        print('X_train:', X_train.shape)
+        print('X_test:', X_test.shape)
+        print('y_train:', y_train.shape)
+        print('y_test:', y_test.shape)
+
+        # Normalize the data
+
+        scaler = StandardScaler().fit(X_train)
+        X_train = scaler.transform(X_train)
+        X_test = scaler.transform(X_test)
+
+        return X_train, X_test, y_train, y_test
+
+    X_train, X_test, y_train, y_test = choose_season('2020-21')
+
+
 
     
 
