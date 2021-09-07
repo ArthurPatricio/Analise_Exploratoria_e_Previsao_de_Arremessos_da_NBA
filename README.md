@@ -244,17 +244,20 @@ Os dados obtidos permitem ainda outras plotagens dos arremessos a seguir são mo
 Arremessos acertados por região da quadra
 
 O atributo 'SHOT_ZONE_AREA' oferece as regiões da quadra utilizadas nessa plotagem.
+
+![2020-21_regular_season_shots_made_per_zone_area](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2020-21_regular_season_shots_made_per_zone_area.png)
     
 Arremessos acertados por zonas de distância.
 
-
 O atributo 'SHOT_ZONE_RANGE' oferece as zonas por diferentes distâncias utilizadas nessa pltagem.
-    
-    
+
+![2020-21_regular_season_shots_made_per_zone_range](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2020-21_regular_season_shots_made_per_zone_range.png)
+
 Arremessos acertados por regiões da quadra (simplificado).
 
 O atributo 'SHOT_ZONE_BASIC' oferece regiões da quadra, diferentes das presentes em 'SHOT_ZONE_AREA', utilizadas nessa plotagem.
     
+![2020-21_regular_season_shots_made_per_zone_area_basic](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2020-21_regular_season_shots_made_per_zone_area_basic.png)
 
 # 4. Distribuição de arrmessos por distância e tipo de Arremesso (2 ou 3 pontos)
 
