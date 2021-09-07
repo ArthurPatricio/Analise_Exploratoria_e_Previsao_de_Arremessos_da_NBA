@@ -291,7 +291,7 @@ Para esclarecer a confusão que a tradução dos termos pode deixar, arremesso p
 ![shot_action_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_action_bar_plot.png)
     
     
-# Previsão de Arremessos utulizando modelos de Machine Learming
+# Previsão de Arremessos utilizando modelos de Machine Learming
 
 A partir destre ponto o conjunto de dados foi tratado a fim de alimentar modelos de Machine Learning com o intuito de prever o resultado de arremessos.
 
