@@ -261,17 +261,23 @@ O atributo 'SHOT_ZONE_BASIC' oferece regiões da quadra, diferentes das presente
 
 # 4. Distribuição de arrmessos por distância e tipo de Arremesso (2 ou 3 pontos)
 
-O gráfico abaixo apresenta a distribuição dos arremessos das 6 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso ((2 ou 3 pontos)).
+O gráfico abaixo apresenta a distribuição dos arremessos das 6 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso (2 ou 3 pontos).
 
 Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre por arremessos de longa distância (atrás da linha de 3 pontos) ou por arremessos, bandejas ou enterradas feitos bem próximos da cesta. Os arremessos de média distância se tornaram algo do passado. 
+
+![shot_distance_distribution](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution.png)
     
     
 # 5. Tipos de Arremessos
     
 O gráfico a seguir mostra todos os arremessos tentados nas 6 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos)
 
+![shot_type_bar_plot.png](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_bar_plot.png)
+
 
 O gráfico a seguir mostra todos os arremessos tentados nas 6 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos) e resultado do arremesso.
+
+![shot_type_made_missed_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_made_missed_bar_plot.png)
 
 
 # 6. Arremessos por Tipo de Acão ofensiva
@@ -280,7 +286,9 @@ O gráfico abaixo mostra todos os arremesoss tentados nas 6 temporadas pelo tipo
 
 Nele nota-se que o 'jump shot' (ou arremesso) é o tipo de arremesso mais tentado na liga.
 
-Ps: Esclarecendo a confusão que a tradução dos termos pode deixar, arremesso pode significar 'shot' que é um arremesso  qualquer ou 'jump shot' que é um tipo específico de arremesso. 
+Para esclarecer a confusão que a tradução dos termos pode deixar, arremesso pode significar 'shot' que é um arremesso  qualquer ou 'jump shot' que é um tipo específico de arremesso. 
+
+![shot_action_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_action_bar_plot.png)
     
     
 # Previsão de Arremessos utulizando modelos de Machine Learming
