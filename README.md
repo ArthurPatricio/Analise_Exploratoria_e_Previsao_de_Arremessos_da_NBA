@@ -259,6 +259,8 @@ O atributo 'SHOT_ZONE_BASIC' oferece regiões da quadra, diferentes das presente
     
 ![2020-21_regular_season_shots_made_per_zone_area_basic](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2020-21_regular_season_shots_made_per_zone_area_basic.png)
 
+Os três gráficos acima nos mostram como os arremessos de 3 pontos se tornaram a principal forma de ate
+
 # 4. Distribuição de arrmessos por distância e tipo de Arremesso (2 ou 3 pontos)
 
 O gráfico abaixo apresenta a distribuição dos arremessos das 6 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso (2 ou 3 pontos).
