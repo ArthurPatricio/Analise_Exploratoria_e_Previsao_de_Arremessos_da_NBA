@@ -478,6 +478,10 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 
 ![confusion_matrix_RF](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_RF.png)
 
+Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no treino do modelo:
+
+![Feature_Importances_RF](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/Feature_Importances_RF.png)
+
 
 # Gradient Boosting Classifier
 
