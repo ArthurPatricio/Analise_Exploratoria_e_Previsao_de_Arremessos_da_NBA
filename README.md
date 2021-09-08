@@ -315,7 +315,7 @@ Em ambas os sub conjuntos sofrem as seguintes operações:
 
 * Normalização: Os dados das bases de Treino e Teste foram normalizados.
 
-Para o treinamento dos modelos que virão a seguir, iremos trabalhar com o sub conjunto de arremessos da temporada regular de 2020-21 da liga. 
+Para o treinamento dos modelos que virão a seguir, iremos trabalhar com o sub conjunto de arremessos do jogador Stephen Curry. Treinamentos também foram feitos utilizando sub conjuntos de uma temporada inteira (2020-21) e os resultados não di 
 
 Funcão choose_player
 
@@ -438,12 +438,19 @@ Os conjunots de Treino e Teste do sub conjunto temporada regular 2020-21 ficaram
 * y_test: (2007,)
     
 
-Para todos os modelos treinados foi utuilizado o GridSaerchCV do Sklearn para realizar a tunagem de Hiper-parâmetros. Foi realizada a busca pelos Hiper-parâmetros que resultassem na melhor acurácia.
+Para todos os modelos treinados foi utilizado o GridSaerchCV do Sklearn para realizar a tunagem de Hiper-parâmetros. Foi realizada a busca pelos Hiper-parâmetros que resultassem na melhor acurácia.
     
     
 # SVM
 
-    
+ O modelo SVM conseguir atingir 64% de acurácia e 62% de F1 score. Os hiper-parâmetros utilizados foram: C = 100, gamma = 0.0001 e kernel = 'rbf'. 
+ 
+ Abaixo, a matriz de confusão entre y_pred e y_test:
+ 
+ ![confusion_matrix_SVM](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_SVM.png)
+ 
+
+# Decision Tree
 
 
 
