@@ -443,7 +443,7 @@ Para todos os modelos treinados foi utilizado o GridSaerchCV do Sklearn para rea
     
 # SVM
 
- O modelo SVM conseguir atingir 64% de acurácia e 62% de F1 score. Os hiper-parâmetros utilizados foram: C = 100, gamma = 0.0001 e kernel = 'rbf'. 
+ O modelo SVM conseguiu atingir 64% de acurácia e 62% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: C = 100, gamma = 0.0001 e kernel = 'rbf'. 
  
  Abaixo, a matriz de confusão entre y_pred e y_test:
  
@@ -452,8 +452,13 @@ Para todos os modelos treinados foi utilizado o GridSaerchCV do Sklearn para rea
 
 # Decision Tree
 
+ O modelo Decision Tree conseguiu atingir 63% de acurácia e 62% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: max_depth = 4 e min_samples_leaf = 2.
+ 
+ Abaixo, a matriz de confusão entre y_pred e y_test:
+ 
+ ![confusion_matrix_DT](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_DT.png)
 
-
+ 
 
 
 
