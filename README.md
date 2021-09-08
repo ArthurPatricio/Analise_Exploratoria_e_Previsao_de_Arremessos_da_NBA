@@ -315,7 +315,7 @@ Em ambas os sub conjuntos sofrem as seguintes operações:
 
 * Normalização: Os dados das bases de Treino e Teste foram normalizados.
 
-Para o treinamento dos modelos que virão a seguir, iremos trabalhar com o sub conjunto de arremessos do jogador Stephen Curry. Treinamentos também foram feitos utilizando sub conjuntos de uma temporada inteira (2020-21) e os resultados não di 
+Para o treinamento dos modelos que virão a seguir, iremos trabalhar com o sub conjunto de arremessos do jogador Stephen Curry. Treinamentos também foram feitos utilizando sub conjuntos de uma temporada inteira (2020-21) e os resultados não se distanciaram significativamente dos resultados obtidos utilizando apenas os arremessos de Stephen Curry.
 
 Funcão choose_player
 
@@ -464,7 +464,11 @@ O modelo Decision Tree conseguiu atingir 63% de acurácia e 62% de F1 score. Os 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
 ![confusion_matrix_DT](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_DT.png)
- 
+
+Abaixo, pode-se ver a árvore de decisão do modelo treinado:
+
+![DT_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/DT_plot.png)
+
  
 # Random Forest
 
