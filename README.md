@@ -440,23 +440,43 @@ Os conjunots de Treino e Teste do sub conjunto temporada regular 2020-21 ficaram
 
 Para todos os modelos treinados foi utilizado o GridSaerchCV do Sklearn para realizar a tunagem de Hiper-parâmetros. Foi realizada a busca pelos Hiper-parâmetros que resultassem na melhor acurácia.
     
-    
+
 # SVM
 
- O modelo SVM conseguiu atingir 64% de acurácia e 62% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: C = 100, gamma = 0.0001 e kernel = 'rbf'. 
- 
- Abaixo, a matriz de confusão entre y_pred e y_test:
- 
- ![confusion_matrix_SVM](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_SVM.png)
+O modelo SVM conseguiu atingir 64% de acurácia e 62% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+
+* C = 100 
+* gamma = 0.0001
+* kernel = 'rbf'. 
+
+Abaixo, a matriz de confusão entre y_pred e y_test:
+
+![confusion_matrix_SVM](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_SVM.png)
  
 
 # Decision Tree
 
- O modelo Decision Tree conseguiu atingir 63% de acurácia e 62% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: max_depth = 4 e min_samples_leaf = 2.
+O modelo Decision Tree conseguiu atingir 63% de acurácia e 62% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+
+* max_depth = 4  
+* min_samples_leaf = 2.
+
+Abaixo, a matriz de confusão entre y_pred e y_test:
+
+![confusion_matrix_DT](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_DT.png)
  
- Abaixo, a matriz de confusão entre y_pred e y_test:
  
- ![confusion_matrix_DT](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_DT.png)
+# Random Forest
+
+O modelo Random Fores conseguiu atingir 63% de acurácia e 63% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+
+* max_features = 11
+* min_samples_leaf = 8
+* n_estimators = 100
+
+Abaixo, a matriz de confusão entre y_pred e y_test:
+
+![confusion_matrix_DT](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_DT.png)
 
  
 
