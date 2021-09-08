@@ -476,7 +476,10 @@ O modelo Random Fores conseguiu atingir 63% de acurácia e 63% de F1 score. Os m
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
-![confusion_matrix_DT](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_DT.png)
+![confusion_matrix_RF](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_RF.png)
+
+
+# Gradient Boosting Classifier
 
  
 
