@@ -309,6 +309,10 @@ Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre po
 ![shot_distance_distribution](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution.png)
 
 Analisando as plotagens abaixo, distribuições tais como a anterior só que agora específicas para as temporadas 2011-21 e 2020-21, respectivamente primeira e última temporadas do nosso conjunto de dados, notamos com clareza a mudança no padrão das ações ofensivas com o passar dos anos. Arremessos de média distância deram espaço para os arremesos de 3 pontos.
+
+![shot_distance_distribution_2011-12](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_2011-12.png)
+
+![shot_distance_distribution_2020-21](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_2020-21.png)
     
     
 # 5. Tipos de Arremessos
