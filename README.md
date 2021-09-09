@@ -48,7 +48,7 @@ O trabalho foi feito todo em Python 3. Abaixo, segue a listagem de todas bibliot
     
 # Leitura dos Dados
 
-As 6 planilhas foram importandas e inseridas em Dataframes utilizando a biblioteca pandas.
+As 10 planilhas foram importandas e inseridas em Dataframes utilizando a biblioteca pandas.
 
     #Read NBA Shots excel files
 
@@ -58,6 +58,10 @@ As 6 planilhas foram importandas e inseridas em Dataframes utilizando a bibliote
     nba_shots_2017_18 = pd.read_excel('nba_shots_2017-18.xlsx', engine='openpyxl')
     nba_shots_2016_17 = pd.read_excel('nba_shots_2016-17.xlsx', engine='openpyxl')
     nba_shots_2015_16 = pd.read_excel('nba_shots_2015-16.xlsx', engine='openpyxl')
+    nba_shots_2014_15 = pd.read_excel('nba_shots_2015-16.xlsx', engine='openpyxl')
+    nba_shots_2013_14 = pd.read_excel('nba_shots_2015-16.xlsx', engine='openpyxl')
+    nba_shots_2012_13 = pd.read_excel('nba_shots_2012-13.xlsx', engine='openpyxl')
+    nba_shots_2011_12 = pd.read_excel('nba_shots_2011-12.xlsx', engine='openpyxl')
     
 Cada Dataframe tem a coluna "Unnamed: 0" retirada e a coluna "SEASON_ID" adicionada sendo inserida a respectiva temporada do Dataframe em questão.
 
@@ -96,23 +100,50 @@ Cada Dataframe tem a coluna "Unnamed: 0" retirada e a coluna "SEASON_ID" adicion
     nba_shots_2015_16.drop(['Unnamed: 0'], axis=1, inplace=True)
     nba_shots_2015_16['SEASON_ID'] = '2015-16'
     nba_shots_2015_16.head()
+    
+    #Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2014_15
 
-Os 6 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shots'.
+    nba_shots_2014_15.drop(['Unnamed: 0'], axis=1, inplace=True)
+    nba_shots_2014_15['SEASON_ID'] = '2014-15'
+    nba_shots_2014_15.head()
 
-    #Create nba_shots as a concatenation of the 3 Dataframes from each reagular season
+    #Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2013_14
 
-    nba_shots = pd.concat([nba_shots_2020_21, nba_shots_2019_20, nba_shots_2018_19, nba_shots_2017_18, nba_shots_2016_17, nba_shots_2015_16], sort=False)
+    nba_shots_2013_14.drop(['Unnamed: 0'], axis=1, inplace=True)
+    nba_shots_2013_14['SEASON_ID'] = '2013-14'
+    nba_shots_2013_14.head()
+
+    #Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2012_13
+
+    nba_shots_2012_13.drop(['Unnamed: 0'], axis=1, inplace=True)
+    nba_shots_2012_13['SEASON_ID'] = '2012-13'
+    nba_shots_2012_13.head()
+
+    #Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2011_12
+
+    nba_shots_2011_12.drop(['Unnamed: 0'], axis=1, inplace=True)
+    nba_shots_2011_12['SEASON_ID'] = '2011-12'
+    nba_shots_2011_12.head()
+
+Os 10 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shots'.
+
+    #Create nba_shots as a concatenation of the 10 Dataframes from each reagular season
+
+    nba_shots = pd.concat([nba_shots_2020_21, nba_shots_2019_20, nba_shots_2018_19, nba_shots_2017_18, nba_shots_2016_17, nba_shots_2015_16, nba_shots_2014_15, nba_shots_2013_14,
+                            nba_shots_2012_13, nba_shots_2011_12], sort=False)
 
     nba_shots.head()
 
 
 # Análise Inicial de nba_shots
 
+    O dataset nba_shots possui 1345097 registros e 25 atributos.
+
     #Get nba_shots dataframe shape
 
     nba_shots.shape
     
-    (989617, 25)
+    (1345097, 25)
     
     #Get nba_shots dataframe columns
 
@@ -219,7 +250,7 @@ De ínicio foram plotados todos os arremessos tentados na temporada 2020-21 de 3
 
 Abaixo temos as plotagens utilizando a função .hexbin da biblioteca matplotlib.
 
-Nessa sequência de gráficos possível notar como o arremesso de 3 pontos se tornou cada vez mais o arremesso* mais popular na liga.
+Nessa sequência de gráficos possível notar como o arremesso de 3 pontos se tornou cada vez mais o arremesso* mais popular na liga com o passar das temporadas.
 
 *Arremessos não incluem ações ofensivas como bandejas e enterradas, que são feitas próximas da cesta e que continuam proeminentes na liga como pode ser notado em todas as imagens.
 
@@ -263,28 +294,30 @@ Os três gráficos acima nos mostram como os arremessos de 3 pontos se tornaram 
 
 # 4. Distribuição de arrmessos por distância e tipo de Arremesso (2 ou 3 pontos)
 
-O gráfico abaixo apresenta a distribuição dos arremessos das 6 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso (2 ou 3 pontos).
+O gráfico abaixo apresenta a distribuição dos arremessos das 10 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso (2 ou 3 pontos).
 
-Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre por arremessos de longa distância (atrás da linha de 3 pontos) ou por arremessos, bandejas ou enterradas feitos bem próximos da cesta. Os arremessos de média distância se tornaram algo do passado. 
+Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre por arremessos de longa distância (atrás da linha de 3 pontos) ou por arremessos, bandejas ou enterradas feitos bem próximos da cesta. Os arremessos de média distância se tornaram algo do passado.  
 
 ![shot_distance_distribution](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution.png)
+
+Analisando as plotagens abaixo, distribuições tais como a anterior só que agora específicas para as temporadas 2011-21 e 2020-21, respectivamente primeira e última temporadas do nosso conjunto de dados, notamos com clareza a mudança no padrão das ações ofensivas com o passar dos anos. Arremessos de média distância deram espaço para os arremesos de 3 pontos.
     
     
 # 5. Tipos de Arremessos
     
-O gráfico a seguir mostra todos os arremessos tentados nas 6 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos)
+O gráfico a seguir mostra todos os arremessos tentados nas 10 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos)
 
 ![shot_type_bar_plot.png](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_bar_plot.png)
 
 
-O gráfico a seguir mostra todos os arremessos tentados nas 6 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos) e resultado do arremesso.
+O gráfico a seguir mostra todos os arremessos tentados nas 10 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos) e resultado do arremesso.
 
 ![shot_type_made_missed_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_made_missed_bar_plot.png)
 
 
 # 6. Arremessos por Tipo de Acão ofensiva
 
-O gráfico abaixo mostra todos os arremesoss tentados nas 6 temporadas pelo tipo de ação ofensiva.
+O gráfico abaixo mostra todos os arremesoss tentados nas 10 temporadas pelo tipo de ação ofensiva.
 
 Nele nota-se que o 'jump shot' (ou arremesso) é o tipo de arremesso mais tentado na liga.
 
