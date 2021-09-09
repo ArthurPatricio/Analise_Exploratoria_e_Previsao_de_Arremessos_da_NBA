@@ -6,7 +6,11 @@
 * Este projeto visa primeiramente, realizar uma análise exploratória dos dados obtidos das últimas 6 temporadas regulares da NBA (2015-16 a 2020-21) e treinar diferentes modelos de machine learning com o intuito de prever se um arremesso é bem-sucedido ou não.
 * Os dados foram obtidos através da API da NBA, o script 'get_players_shot_charts.ipynb' criado e a planilha com os ID's dos jogadores pode ser encontrados em: 
 
-- (https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA) 
+    - (https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA) 
+
+* O notebook, chamado "NBA_SHOT_CHARTS", contendo todos os códigos desenvolvidos neste trabalho pode ser encontrado em:
+
+   -    (https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/NBA_SHOT_CHARTS.ipynb)
 
 # Linguagem, Bibliotecas e Pacotes
     
@@ -345,7 +349,7 @@ A partir destre ponto o conjunto de dados foi tratado a fim de alimentar modelos
 
 # Sub Conjuntos de Dados
 
-Dada a dimensão do nosso conjunto principal de dados que possui, 989617 registros e 25 atributos. Foi decidido trabalhar com os modelos de machine learning utilizando sub conjuntos de dados.
+Dada a dimensão do nosso conjunto principal de dados que possui, 1345097 registros e 25 atributos. Foi decidido trabalhar com os modelos de machine learning utilizando sub conjuntos de dados.
 
 Foram criadas duas funções 'choose_player' e 'choose_season'. 'choose_player' permite criar um sub conjunto de dados de um jogador da NBA. 'choose_season' permite criar um sub conjunto de dados de uma temporada da NBA.
 
@@ -356,7 +360,7 @@ Em ambas os sub conjuntos sofrem as seguintes operações:
 * Dummy Coding: Aplicado nos seguintes atrobutos categóricos  'GRID_TYPE', 'ACTION_TYPE', 'SHOT_TYPE', 'SHOT_ZONE_BASIC', 
       'SHOT_ZONE_AREA', 'SHOT_ZONE_RANGE', 'HTM', 'VTM' e 'SEASON_ID'.
 
-* Train/Test split: Os conjuntos de Treino e Teste foram criados.
+* Train/Test split: Os conjuntos de Treino e Teste foram criados. 
 
 * Checagem e tratamento de atributos vom variância igual a zero: Foram calculadas as variâncias de todos os atributos e os com valor 0 foram retirados das bases de Treino e Teste.
 
