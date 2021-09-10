@@ -884,7 +884,26 @@ Hoje, os times notam que esse maior risco vale ser encarado. Tendo em considera�
 
 Obviamente que esse cenário que ignora dezenas de fatores que levam ao sucesso ou não de um arremesso em um jogo oficial de basquete na NBA. Porém, essa lógica é a base do pensamento que levam hoje muitos dos times e sua comissões técnicas a priorizarem a bola de 3 mesmo que isso faça com que a média de acerto dos arremessos caia.
 
+Diferente do que foi visto para o dataset geral, se analizarmos a performance de acerto de arremessos por período de jogo, Curry não aparenta seguir o mesmo padrão que o resto da liga, onde as médias de acerto caem com o avançar do jogo.
 
+    # SHOT PER GAME PERIOD BAR PLOT
+
+    plt.figure(figsize=(20,12))
+    fig12 = sns.countplot(data=nba_shots, x=nba_shots[nba_shots['PLAYER_NAME'] == 'Stephen Curry']['PERIOD'],
+                            palette = 'husl', 
+                            hue = nba_shots[nba_shots['PLAYER_NAME'] == 'Stephen Curry']['EVENT_TYPE'])
+    fig12.set_xlabel('SHOT_TYPE', fontsize=20)
+    fig12.set_ylabel('COUNT', fontsize=20)
+    fig12.tick_params(labelsize=20)
+    plt.title('SHOT TYPE PER GAME PERIOD STEPHEN CURRY', fontsize = 20)
+    for p in fig12.patches:
+        txt = str(p.get_height().round(2))
+        txt_x = p.get_x() 
+        txt_y = p.get_height()
+        fig12.text(txt_x,txt_y,txt)
+    plt.show()
+    
+![shot_type_per_game_period_stephen_curry](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_per_game_period_stephen_curry.png)
 
 Funcão choose_player
 
