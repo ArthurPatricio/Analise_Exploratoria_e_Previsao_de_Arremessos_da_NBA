@@ -630,7 +630,33 @@ Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre po
 
 Analisando as plotagens abaixo, distribuições tais como a anterior só que agora específicas para as temporadas 2011-21 e 2020-21, respectivamente primeira e última temporadas do nosso conjunto de dados, notamos com clareza a mudança no padrão das ações ofensivas com o passar dos anos. Arremessos de média distância deram espaço para os arremesos de 3 pontos.
 
+    # SHOT DISTANCE DISTRIBUTION PLOT 2011-12 SEASON
+
+    plt.figure(figsize=(20,12))
+    fig2 = sns.histplot(data=nba_shots, 
+                        x=nba_shots[nba_shots['SEASON_ID'] == '2011-12']['SHOT_DISTANCE'], 
+                        hue = nba_shots[nba_shots['SEASON_ID'] == '2011-12']['SHOT_TYPE'])
+    fig2.set_xlabel('SHOT_DISTANCE', fontsize=20)
+    fig2.set_ylabel('COUNT', fontsize=20)
+    fig2.tick_params(labelsize=15)
+    plt.title('SHOT DISTANCE DISTRIBUTION 2011-12 SEASON', fontsize = 20)
+    plt.xlim(0,40)
+    plt.show()
+
 ![shot_distance_distribution_2011-12](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_2011-12.png)
+
+    # SHOT DISTANCE DISTRIBUTION PLOT 2020-21 SEASON
+
+    plt.figure(figsize=(20,12))
+    fig3 = sns.histplot(data=nba_shots, 
+                        x=nba_shots[nba_shots['SEASON_ID'] == '2020-21']['SHOT_DISTANCE'], 
+                        hue = nba_shots[nba_shots['SEASON_ID'] == '2020-21']['SHOT_TYPE'])
+    fig3.set_xlabel('SHOT_DISTANCE', fontsize=20)
+    fig3.set_ylabel('COUNT', fontsize=20)
+    fig3.tick_params(labelsize=15)
+    plt.title('SHOT DISTANCE DISTRIBUTION 2020-21 SEASON', fontsize = 20)
+    plt.xlim(0,40)
+    plt.show()
 
 ![shot_distance_distribution_2020-21](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_2020-21.png)
     
