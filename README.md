@@ -829,6 +829,63 @@ Como pode ser visto na distribuição de arremessos por distância e tipo aprese
     
 ![shot_distance_distribution_stephen_curry](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_stephen_curry.png)
 
+Nos gráficos de barra abaixo, que mostram os arremessos divididos pelo tipo (2 e 3 pontos) e por tipo e resultado respsctivamente. Notamos que o Stephen Curry foge do comportamento visto nestes mesmos gráficos que foram plotados considerando o dataset inteiro.
+
+Em 10 temporadas, o atelta estreou na temporada 2009-10, Curry arremesou mais bolas de 3 pontos do que de 2. Algo impensável antes do surgimento do mesmo. Vale lembrar que ele já é considerado quase que unanimamente por mídia especializada e fãs, como o melhor arremessador de 3 pontos da história da liga. Tendo sob seu nome vários recordes como por exemplo, mais arremessos de 3 pontos acertados em uma temporada regular (2015-2016) e mais arremessos de 3 pontos acertados em playoffs (na história).[1]
+
+    # SHOT TYPE BAR PLOT STEPHEN CURRY
+
+    plt.figure(figsize=(20,12))
+    fig10 = sns.countplot(data=nba_shots, x=nba_shots[nba_shots['PLAYER_NAME'] == 'Stephen Curry']['SHOT_TYPE'], palette = 'husl')
+    fig10.set_xlabel('SHOT_TYPE', fontsize=20)
+    fig10.set_ylabel('COUNT', fontsize=20)
+    fig10.tick_params(labelsize=20)
+    plt.title('SHOT TYPE STEPHEN CURRY', fontsize = 20)
+    for p in fig10.patches:
+        txt = str(p.get_height().round(2))
+        txt_x = p.get_x() 
+        txt_y = p.get_height()
+        fig10.text(txt_x,txt_y,txt)
+    plt.show()
+    
+![shot_type_bar_plot_stephen_curry](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_bar_plot_stephen_curry.png) 
+
+
+    # SHOT TYPE (MADE/MISSED) BAR PLOT STEPHEN CURRY
+
+    plt.figure(figsize=(20,12))
+    fig11 = sns.countplot(data=nba_shots, x=nba_shots[nba_shots['PLAYER_NAME'] == 'Stephen Curry']['SHOT_TYPE'], 
+                        palette = 'husl', 
+                        hue = nba_shots[nba_shots['PLAYER_NAME'] == 'Stephen Curry']['EVENT_TYPE'])
+    fig11.set_xlabel('SHOT_TYPE', fontsize=20)
+    fig11.set_ylabel('COUNT', fontsize=20)
+    fig11.tick_params(labelsize=20)
+    plt.title('SHOT TYPE (MADE/MISSED) STEPHEN CURRY', fontsize = 20)
+    for p in fig11.patches:
+        txt = str(p.get_height().round(2))
+        txt_x = p.get_x() 
+        txt_y = p.get_height()
+        fig11.text(txt_x,txt_y,txt)
+    plt.show()
+
+![shot_type_made_missed_bar_plot_stephen_curry](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_made_missed_bar_plot_stephen_curry.png) 
+
+Apesar de sua extrema capacidade na bola de 3, Curry ainda sim acerta percentualmente mais bolas de 2 do que de 3, como pode ser visto no gráfico abaixo. 
+
+Média nos arremessos de 2 pontos: 2840/(2840 + 2403) = 0,5417 -> 54,17%
+
+Media nos arremessos de 3 pontos: 2768/(3554 + 2768) = 0,4378 -> 43,78%
+
+Média geral: (2840 + 2768)/(2840 + 2403 + 3554 + 2768) = 0,4849 -> 48,49%
+
+A diferença nos valores é absolutamente normal dada a natureza do jogo de basquete, a bola de 3 é uma ação ofensiva de maior risco e maior recompensa.
+
+Hoje, os times notam que esse maior risco vale ser encarado. Tendo em consideração as médias do Curry. Como calculado, ele acerta em média 54,17% dos seus arremessos de 2 pontos, em um cenário em que tente 10 desses arremessos, ele acertaria 5 e isso resultaria num total de 10 pontos. Já se fizer as mesmas 10 tentativas para a bola de 3, com sua média de 43,78%, acertaria 4 bolas que somariam um total de 12 pontos.
+
+Obviamente que esse cenário que ignora dezenas de fatores que levam ao sucesso ou não de um arremesso em um jogo oficial de basquete na NBA. Porém, essa lógica é a base do pensamento que levam hoje muitos dos times e sua comissões técnicas a priorizarem a bola de 3 mesmo que isso faça com que a média de acerto dos arremessos caia.
+
+
+
 Funcão choose_player
 
         # Due to the large amount of the dataset, everything past this point you be done per player. The function below creates a sub dataset from nba_shots with the data form the chosen player. 
