@@ -749,9 +749,9 @@ Para esclarecer a confusão que a tradução dos termos pode deixar, arremesso p
 
 # 7. Arremessos por Período
 
-    Outra forma interessante de se enxergar a efetividade dos arremessos é através dos períodos de um jogo de basquete. Um jogo tem 4 períodos e se ao final o jogo permanecer empatado, períodos extra mais curtos, são jogados até que ao final de um deles um time esteja vencendo.
+Outra forma interessante de se enxergar a efetividade dos arremessos é através dos períodos de um jogo de basquete. Um jogo tem 4 períodos e se ao final o jogo permanecer empatado, períodos extra mais curtos, são jogados até que ao final de um deles um time esteja vencendo.
 
-    Abaixo podemos ver que média de acerto cai com o avanço dos períodos, algo que pode-se considerar esperado. Já que com o passar do jogo, cada arremesso tende a carregar maior importância, sendo esse um aspecto mental que pode afetar os atletas. Outro fator é o físico, quando mais se joga mais cansados estão os atletas, o que os leva em momentos a não conseguir performar o movimento do arremesso corretamente. 
+Abaixo podemos ver que média de acerto cai com o avanço dos períodos, algo que pode-se considerar esperado. Já que com o passar do jogo, cada arremesso tende a carregar maior importância, sendo esse um aspecto mental que pode afetar os atletas. Outro fator é o físico, quando mais se joga mais cansados estão os atletas, o que os leva em momentos a não conseguir performar o movimento do arremesso corretamente. 
     
     # SHOT PER GAME PERIOD BAR PLOT
 
