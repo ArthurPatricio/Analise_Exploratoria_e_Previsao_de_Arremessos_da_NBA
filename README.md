@@ -718,7 +718,24 @@ Análogo ao que foi feito com os gráficos de distribuição, como pode ser vist
         fig6.text(txt_x,txt_y,txt)
     plt.show()
     
-![shot_type_2011-12_season_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_2011-12_season_bar_plot.png)    
+![shot_type_2011-12_season_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_2011-12_season_bar_plot.png)
+
+    # SHOT TYPE BAR PLOT
+
+    plt.figure(figsize=(20,12))
+    fig7 = sns.countplot(data=nba_shots, x=nba_shots[nba_shots['SEASON_ID'] == '2020-21']['SHOT_TYPE'], palette = 'husl')
+    fig7.set_xlabel('SHOT_TYPE', fontsize=20)
+    fig7.set_ylabel('COUNT', fontsize=20)
+    fig7.tick_params(labelsize=20)
+    plt.title('SHOT TYPE 2020-21 SEASON', fontsize = 20)
+    for p in fig7.patches:
+        txt = str(p.get_height().round(2))
+        txt_x = p.get_x() 
+        txt_y = p.get_height()
+        fig7.text(txt_x,txt_y,txt)
+    plt.show()
+    
+![shot_type_2020-21_season_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_2020-21_season_bar_plot.png)
 
 # 6. Arremessos por Tipo de Acão ofensiva
 
