@@ -665,13 +665,60 @@ Analisando as plotagens abaixo, distribuições tais como a anterior só que ago
     
 O gráfico a seguir mostra todos os arremessos tentados nas 10 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos)
 
-![shot_type_bar_plot.png](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_bar_plot.png)
+    # SHOT TYPE BAR PLOT
 
+    plt.figure(figsize=(20,12))
+    fig4 = sns.countplot(data=nba_shots, x='SHOT_TYPE', palette = 'husl')
+    fig4.set_xlabel('SHOT_TYPE', fontsize=20)
+    fig4.set_ylabel('COUNT', fontsize=20)
+    fig4.tick_params(labelsize=20)
+    plt.title('SHOT TYPE', fontsize = 20)
+    for p in fig4.patches:
+        txt = str(p.get_height().round(2))
+        txt_x = p.get_x() 
+        txt_y = p.get_height()
+        fig4.text(txt_x,txt_y,txt)
+    plt.show()
+
+![shot_type_bar_plot.png](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_bar_plot.png)
 
 O gráfico a seguir mostra todos os arremessos tentados nas 10 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos) e resultado do arremesso.
 
+    # SHOT TYPE (MADE/MISSED) BAR PLOT
+
+    plt.figure(figsize=(20,12))
+    fig5 = sns.countplot(data=nba_shots, x='SHOT_TYPE', palette = 'husl', hue = 'EVENT_TYPE')
+    fig5.set_xlabel('SHOT_TYPE', fontsize=20)
+    fig5.set_ylabel('COUNT', fontsize=20)
+    fig5.tick_params(labelsize=20)
+    plt.title('SHOT TYPE (MADE/MISSED)', fontsize = 20)
+    for p in fig5.patches:
+        txt = str(p.get_height().round(2))
+        txt_x = p.get_x() 
+        txt_y = p.get_height()
+        fig5.text(txt_x,txt_y,txt)
+    plt.show()
+
 ![shot_type_made_missed_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_made_missed_bar_plot.png)
 
+Análogo ao que foi feito com os gráficos de distribuição, como pode ser visto abaixo, plotando os gráficos de barra por tipo de arremesso vemos que proporcionalmente a quantidade de arremessos de 2 e 3 pontos é muito mais próxima na temporada 2020-21 do que era na temporada 2011-12.
+
+    # SHOT TYPE BAR PLOT
+
+    plt.figure(figsize=(20,12))
+    fig6 = sns.countplot(data=nba_shots, x=nba_shots[nba_shots['SEASON_ID'] == '2011-12']['SHOT_TYPE'], palette = 'husl')
+    fig6.set_xlabel('SHOT_TYPE', fontsize=20)
+    fig6.set_ylabel('COUNT', fontsize=20)
+    fig6.tick_params(labelsize=20)
+    plt.title('SHOT TYPE 2011-12 SEASON', fontsize = 20)
+    for p in fig6.patches:
+        txt = str(p.get_height().round(2))
+        txt_x = p.get_x() 
+        txt_y = p.get_height()
+        fig6.text(txt_x,txt_y,txt)
+    plt.show()
+    
+![shot_type_2011-12_season_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_2011-12_season_bar_plot.png)    
 
 # 6. Arremessos por Tipo de Acão ofensiva
 
