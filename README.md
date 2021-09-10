@@ -235,6 +235,46 @@ A função 'create_court' abaixo foi obtida do seguinte artigo:
 - (https://towardsdatascience.com/make-a-simple-nba-shot-chart-with-python-e5d70db45d0d)
 
 Esta função cria desenha uma quadra de basquete nas proporções da NBA utilizando matplotlib.
+
+    # Function to draw basketball court
+
+    def create_court(ax, color):
+
+        # Short corner 3PT lines
+        ax.plot([-220, -220], [0, 140], linewidth=2, color=color)
+        ax.plot([220, 220], [0, 140], linewidth=2, color=color)
+
+        # 3PT Arc
+        ax.add_artist(mpl.patches.Arc((0, 140), 440, 315, theta1=0, theta2=180, facecolor='none', edgecolor=color, lw=2))
+
+        # Lane and Key
+        ax.plot([-80, -80], [0, 190], linewidth=2, color=color)
+        ax.plot([80, 80], [0, 190], linewidth=2, color=color)
+        ax.plot([-60, -60], [0, 190], linewidth=2, color=color)
+        ax.plot([60, 60], [0, 190], linewidth=2, color=color)
+        ax.plot([-80, 80], [190, 190], linewidth=2, color=color)
+        ax.add_artist(mpl.patches.Circle((0, 190), 60, facecolor='none', edgecolor=color, lw=2))
+
+        # Rim
+        ax.add_artist(mpl.patches.Circle((0, 60), 15, facecolor='none', edgecolor=color, lw=2))
+
+        # Backboard
+        ax.plot([-30, 30], [40, 40], linewidth=2, color=color)
+
+        # Remove ticks
+        ax.set_xticks([])
+        ax.set_yticks([])
+
+        # Set axis limits
+        ax.set_xlim(-250, 250)
+        ax.set_ylim(0, 470)
+
+        # General plot parameters
+        #mpl.rcParams['font.family'] = 'Avenir'
+        mpl.rcParams['font.size'] = 18
+        mpl.rcParams['axes.linewidth'] = 2
+
+        return ax
     
 
 # Análise Exploratória
@@ -308,7 +348,7 @@ Os três gráficos acima nos mostram como os arremessos de 3 pontos se tornaram 
 
 O gráfico abaixo apresenta a distribuição dos arremessos das 10 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso (2 ou 3 pontos).
 
-Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre por arremessos de longa distância (atrás da linha de 3 pontos) ou por arremessos, bandejas ou enterradas feitos bem próximos da cesta. Os arremessos de média distância se tornaram algo do passado.  
+Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre por arremessos de longa distância (atrás da linha de 3 pontos) ou por arremessos, bandejas ou enterradas feitos bem próximos da cesta. Os arremessos de média distância se tornaram bem menos utilizados.  
 
 ![shot_distance_distribution](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution.png)
 
@@ -353,20 +393,24 @@ Dada a dimensão do nosso conjunto principal de dados que possui, 1345097 regist
 
 Foram criadas duas funções 'choose_player' e 'choose_season'. 'choose_player' permite criar um sub conjunto de dados de um jogador da NBA. 'choose_season' permite criar um sub conjunto de dados de uma temporada da NBA.
 
-Em ambas os sub conjuntos sofrem as seguintes operações:
+Em ambas funções, os sub conjuntos sofrem as seguintes operações:
     
-* Redução de Dimensão: Os atributos 'PLAYER_NAME', 'EVENT_TYPE' e 'TEAM_NAME' são retirados por serem redundantes.
+* Redução de Dimensão: Os atributos 'PLAYER_NAME', 'EVENT_TYPE' e 'TEAM_NAME' são retirados por serem redundantes em informação fornecida com os atributos 'PLAYER_ID', 'SHOT_MADE_FLAG' e 'TEAM_ID' respectivamente.
 
-* Dummy Coding: Aplicado nos seguintes atrobutos categóricos  'GRID_TYPE', 'ACTION_TYPE', 'SHOT_TYPE', 'SHOT_ZONE_BASIC', 
+* Dummy Coding: Aplicado nos seguintes atributos categóricos  'GRID_TYPE', 'ACTION_TYPE', 'SHOT_TYPE', 'SHOT_ZONE_BASIC', 
       'SHOT_ZONE_AREA', 'SHOT_ZONE_RANGE', 'HTM', 'VTM' e 'SEASON_ID'.
 
-* Train/Test split: Os conjuntos de Treino e Teste foram criados. 
+* Train/Test split: Os conjuntos de Treino e Teste foram criados com os seguintes parâmetros:
+
+    - Razão treino/teste igual a 0.2
+    - Random state igual a 100 para permitir reproducibilidade ods conjuntos de treino e teste.
+    - Estratificação ativada para permitir uma divisão equilibrada entre os resultados do sub conjunto de dados escolhido.
 
 * Checagem e tratamento de atributos vom variância igual a zero: Foram calculadas as variâncias de todos os atributos e os com valor 0 foram retirados das bases de Treino e Teste.
 
-* Normalização: Os dados das bases de Treino e Teste foram normalizados.
+* Normalização: Os dados das bases de Treino e Teste foram normalizados. É uma etapa fundamental pois o conjunto de dados possui atributos numéricos em escalas bastante distintas, como por exmplo 'TEAM_ID' e 'PERIOD'. Essa diferença pode levar os modelos a uma menor eficiência.
 
-Para o treinamento dos modelos que virão a seguir, iremos trabalhar com o sub conjunto de arremessos do jogador Stephen Curry. Treinamentos também foram feitos utilizando sub conjuntos de uma temporada inteira (2020-21) e os resultados não se distanciaram significativamente dos resultados obtidos utilizando apenas os arremessos de Stephen Curry.
+Para o treinamento dos modelos que virão a seguir, iremos trabalhar com o sub conjunto de arremessos do jogador Stephen Curry. Treinamentos também foram feitos utilizando sub conjuntos de uma temporada inteira (2020-21) e os resultados não se distanciaram significativamente dos resultados obtidos utilizando apenas os arremessos do jogador.
 
 Funcão choose_player
 
@@ -480,13 +524,13 @@ Função choose_season
     X_train, X_test, y_train, y_test = choose_season('2020-21')
     
     
-Os conjunots de Treino e Teste do sub conjunto temporada regular 2020-21 ficaram com os seguintes formatos:
+Os conjuntos de Treino e Teste do sub conjunto de arremessos do Stephen Curry ficaram com os seguintes formatos:
 
-* X_train e X_test possuíam 3 atributo(s) com variância igual a zero
-* X_train: (4682, 128)
-* X_test: (2007, 128)
-* y_train: (4682,)
-* y_test: (2007,)
+* X_train e X_test possuíam 4 atributo(s) com variância igual a zero
+* X_train: (9252, 138)
+* X_test: (2313, 138)
+* y_train: (9252,)
+* y_test: (2313,)
     
 
 Para todos os modelos treinados foi utilizado o GridSaerchCV do Sklearn para realizar a tunagem de Hiper-parâmetros. Foi realizada a busca pelos Hiper-parâmetros que resultassem na melhor acurácia.
