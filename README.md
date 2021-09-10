@@ -356,23 +356,183 @@ Nessa sequência de gráficos possível notar como o arremesso de 3 pontos se to
 
 *Arremessos não incluem ações ofensivas como bandejas e enterradas, que são feitas próximas da cesta e que continuam proeminentes na liga como pode ser notado em todas as imagens.
 
+    # 2011-12 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2011-12') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2011-12') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2011-12 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
+
 ![2011-12_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2011-12_regular_season_made_shots.png)
+
+    # 2012-13 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2012-13') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2012-13') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2012-13 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show() 
 
 ![2012-13_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2012-13_regular_season_made_shots.png)
 
+    # 2013-14 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2013-14') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2013-14') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2013-14 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
+
 ![2013-14_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2013-14_regular_season_made_shots.png)
+
+    # 2014-15 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2014-15') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2014-15') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2014-15 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
 
 ![2014-15_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2014-15_regular_season_made_shots.png)
 
+    # 2015-16 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2015-16') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2015-16') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2015-16 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
+
 ![2015-16_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2015-16_regular_season_made_shots.png)
+
+    # 2016-17 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2016-17') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2016-17') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2016-17 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
 
 ![2016-17_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2016-17_regular_season_made_shots.png)
 
+    # 2017-18 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2017-18') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2017-18') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2017-18 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
+
 ![2017-18_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2017-18_regular_season_made_shots.png)
+
+    # 2018-19 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2018-19') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2018-19') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2018-19 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
 
 ![2018-19_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2018-19_regular_season_made_shots.png)
 
+    # 2019-20 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2019-20') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2019-20') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2019-20 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
+
 ![2019-20_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2019-20_regular_season_made_shots.png)
+
+    # 2020-21 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2020-21 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
 
 ![2020-21_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2020-21_regular_season_made_shots.png)
     
