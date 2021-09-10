@@ -769,7 +769,14 @@ Abaixo podemos ver que média de acerto cai com o avanço dos períodos, algo qu
     plt.show()
     
 ![shot_type_per_game_period](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_per_game_period.png)
-    
+
+Média Primeiro Período: 169006/(191077 + 169006) = 0,4694 -> 46,94%
+
+Média Segundo Período: 152177/(175035 + 152177) = 0,4650 -> 46,50%
+ 
+Média Terceiro Período: 157762/(183722 + 157762) = 0,4620 -> 46,20%
+ 
+Média Primeiro Período: 138886/(167738 + 138886) = 0,4530 -> 45,30%
     
 # Previsão de Arremessos utilizando modelos de Machine Learming
 
