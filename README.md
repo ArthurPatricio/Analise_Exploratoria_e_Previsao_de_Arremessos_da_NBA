@@ -286,9 +286,66 @@ De ínicio foram plotados todos os arremessos tentados na temporada 2020-21 de 3
  
 ![james_harden_2020-21_shot_chart](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/james_harden_2020-21_shot_chart.png)
 
+    # JAMES HARDEN 2020-21 REGULAR SEASON SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Shots Scatter Plots
+    ax.scatter(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1) & (nba_shots['PLAYER_NAME'] == 'James Harden')]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1) & (nba_shots['PLAYER_NAME'] == 'James Harden')]['LOC_Y'] +60, marker = "o", color = "Green")
+
+    ax.scatter(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==0) & (nba_shots['PLAYER_NAME'] == 'James Harden')]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==0) & (nba_shots['PLAYER_NAME'] == 'James Harden')]['LOC_Y'] +60, marker = "x", color = "Red")
+
+    plt.title('JAMES HARDEN 2020-21 REGULAR SEASON SHOTS', fontsize = 20)
+    plt.show()
+
 ![stephen_curry_2020-21_shot_chart](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/stephen_curry_2020-21_shot_chart.png)
 
+    # SEPHEN CURRY 2020-21 REGULAR SEASON SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.scatter(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1) & (nba_shots['PLAYER_NAME'] == 'Stephen Curry')]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1) & (nba_shots['PLAYER_NAME'] == 'Stephen Curry')]['LOC_Y'] +60, marker = "o", color = "Green")
+
+    ax.scatter(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==0) & (nba_shots['PLAYER_NAME'] == 'Stephen Curry')]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==0) & (nba_shots['PLAYER_NAME'] == 'Stephen Curry')]['LOC_Y'] +60, marker = "x", color = "Red")
+
+    plt.title('STEPHEN CURRY 2020-21 REGULAR SEASON SHOTS', fontsize = 20)
+    plt.show()
+
 ![nikola_jokic_2020-21_shot_chart](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/nikola_jokic_2020-21_shot_chart.png)
+
+    # NIKOLA JOKIC 2020-21 REGULAR SEASON SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.scatter(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1) & (nba_shots['PLAYER_NAME'] == 'Nikola Jokic')]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1) & (nba_shots['PLAYER_NAME'] == 'Nikola Jokic')]['LOC_Y'] +60, marker = "o", color = "Green")
+
+    ax.scatter(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==0) & (nba_shots['PLAYER_NAME'] == 'Nikola Jokic')]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==0) & (nba_shots['PLAYER_NAME'] == 'Nikola Jokic')]['LOC_Y'] +60, marker = "x", color = "Red")
+
+    plt.title('NIKOLA JOKIC 2020-21 REGULAR SEASON SHOTS', fontsize = 20)
+    plt.show()
 
 # 2. Arremessos Acertados por Temporada
 
