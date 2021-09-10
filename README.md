@@ -776,7 +776,7 @@ Média Segundo Período: 152177/(175035 + 152177) = 0,4650 -> 46,50%
  
 Média Terceiro Período: 157762/(183722 + 157762) = 0,4620 -> 46,20%
  
-Média Primeiro Período: 138886/(167738 + 138886) = 0,4530 -> 45,30%
+Média Quarto Período: 138886/(167738 + 138886) = 0,4530 -> 45,30%
     
 # Previsão de Arremessos utilizando modelos de Machine Learming
 
@@ -807,6 +807,27 @@ Em ambas funções, os sub conjuntos sofrem as seguintes operações:
 * Normalização: Os dados das bases de Treino e Teste foram normalizados. É uma etapa fundamental pois o conjunto de dados possui atributos numéricos em escalas bastante distintas, como por exmplo 'TEAM_ID' e 'PERIOD'. Essa diferença pode levar os modelos a uma menor eficiência.
 
 Para o treinamento dos modelos que virão a seguir, iremos trabalhar com o sub conjunto de arremessos do jogador Stephen Curry. Treinamentos também foram feitos utilizando sub conjuntos de uma temporada inteira (2020-21) e os resultados não se distanciaram significativamente dos resultados obtidos utilizando apenas os arremessos do jogador.
+
+# Análise exploratória do sub conjunto de dados
+
+Decidido o sub conjunto de dados que iremos utilizar para o treinamento e avaliação dos nossos modelos, é interessante repetir agora algumas das avaliações que fizemos anteriormente, apenas considerando os arremessos do Stephen Curry.
+    
+Como pode ser visto na distribuição de arremessos por distância e tipo apresentada abaixo. O jogador possui um perfil de arremessar preferencialmente bolas de 3 pontos.
+
+    # SHOT DISTANCE DISTRIBUTION PLOT STEPHEN CURRY
+
+    plt.figure(figsize=(20,12))
+    fig9 = sns.histplot(data=nba_shots, 
+                        x=nba_shots[nba_shots['PLAYER_NAME'] == 'Stephen Curry']['SHOT_DISTANCE'], 
+                        hue = nba_shots[nba_shots['PLAYER_NAME'] == 'Stephen Curry']['SHOT_TYPE'])
+    fig9.set_xlabel('SHOT_DISTANCE', fontsize=20)
+    fig9.set_ylabel('COUNT', fontsize=20)
+    fig9.tick_params(labelsize=15)
+    plt.title('SHOT DISTANCE DISTRIBUTION STEPHEN CURRY', fontsize = 20)
+    plt.xlim(0,40)
+    plt.show()
+    
+![shot_distance_distribution_stephen_curry](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_stephen_curry.png)
 
 Funcão choose_player
 
