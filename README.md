@@ -613,7 +613,18 @@ Os três gráficos acima nos mostram como os arremessos de 3 pontos se tornaram 
 
 O gráfico abaixo apresenta a distribuição dos arremessos das 10 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso (2 ou 3 pontos).
 
-Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre por arremessos de longa distância (atrás da linha de 3 pontos) ou por arremessos, bandejas ou enterradas feitos bem próximos da cesta. Os arremessos de média distância se tornaram bem menos utilizados.  
+Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre por arremessos de longa distância (atrás da linha de 3 pontos) ou por arremessos, bandejas ou enterradas feitos bem próximos da cesta. Os arremessos de média distância se tornaram bem menos utilizados.
+
+    # SHOT DISTANCE DISTRIBUTION PLOT
+
+    plt.figure(figsize=(20,12))
+    fig1 = sns.histplot(data=nba_shots, x='SHOT_DISTANCE', hue = 'SHOT_TYPE')
+    fig1.set_xlabel('SHOT_DISTANCE', fontsize=20)
+    fig1.set_ylabel('COUNT', fontsize=20)
+    fig1.tick_params(labelsize=15)
+    plt.title('SHOT DISTANCE DISTRIBUTION', fontsize = 20)
+    plt.xlim(0,40)
+    plt.show()
 
 ![shot_distance_distribution](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution.png)
 
