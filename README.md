@@ -541,22 +541,69 @@ Nessa sequência de gráficos possível notar como o arremesso de 3 pontos se to
 
 Os dados obtidos permitem ainda outras plotagens dos arremessos a seguir são mostradas 3 diferentes formas de enxergar os arremessos de acordo com sua posição em quadra.
     
-
 Arremessos acertados por região da quadra
 
 O atributo 'SHOT_ZONE_AREA' oferece as regiões da quadra utilizadas nessa plotagem.
+
+    # 2020-21 REGULAR SEASON SHOTS MADE PER ZONE AREA
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(20, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    sns.scatterplot(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] + 60, hue = nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['SHOT_ZONE_AREA'])
+
+    plt.title('2020-21 REGULAR SEASON SHOTS MADE PER ZONE AREA', fontsize = 20)
+    plt.show()
 
 ![2020-21_regular_season_shots_made_per_zone_area](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2020-21_regular_season_shots_made_per_zone_area.png)
     
 Arremessos acertados por zonas de distância.
 
-O atributo 'SHOT_ZONE_RANGE' oferece as zonas por diferentes distâncias utilizadas nessa pltagem.
+O atributo 'SHOT_ZONE_RANGE' oferece as zonas por diferentes distâncias utilizadas nessa plotagem.
+
+    # 2020-21 REGULAR SEASON SHOTS MADE PER ZONE RANGE
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(20, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    sns.scatterplot(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] + 60, hue = nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['SHOT_ZONE_RANGE'])
+
+    plt.title('2020-21 REGULAR SEASON SHOTS MADE PER ZONE RANGE', fontsize = 20)
+    plt.show()
 
 ![2020-21_regular_season_shots_made_per_zone_range](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2020-21_regular_season_shots_made_per_zone_range.png)
 
 Arremessos acertados por regiões da quadra (simplificado).
 
 O atributo 'SHOT_ZONE_BASIC' oferece regiões da quadra, diferentes das presentes em 'SHOT_ZONE_AREA', utilizadas nessa plotagem.
+
+    # 2020-21 REGULAR SEASON SHOTS MADE PER ZONE AREA (BASIC)
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(20, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    sns.scatterplot(nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] + 60, hue = nba_shots[(nba_shots['SEASON_ID'] == '2020-21') & (nba_shots['SHOT_MADE_FLAG']==1)]['SHOT_ZONE_BASIC'])
+
+    plt.title('2020-21 REGULAR SEASON SHOTS MADE PER ZONE AREA (BASIC)', fontsize = 20)
+    plt.show()
     
 ![2020-21_regular_season_shots_made_per_zone_area_basic](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2020-21_regular_season_shots_made_per_zone_area_basic.png)
 
