@@ -746,6 +746,29 @@ Nele nota-se que o 'jump shot' (ou arremesso) é o tipo de arremesso mais tentad
 Para esclarecer a confusão que a tradução dos termos pode deixar, arremesso pode significar 'shot' que é um arremesso  qualquer ou 'jump shot' que é um tipo específico de arremesso. 
 
 ![shot_action_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_action_bar_plot.png)
+
+# 7. Arremessos por Período
+
+    Outra forma interessante de se enxergar a efetividade dos arremessos é através dos períodos de um jogo de basquete. Um jogo tem 4 períodos e se ao final o jogo permanecer empatado, períodos extra mais curtos, são jogados até que ao final de um deles um time esteja vencendo.
+
+    Abaixo podemos ver que média de acerto cai com o avanço dos períodos, algo que pode-se considerar esperado. Já que com o passar do jogo, cada arremesso tende a carregar maior importância, sendo esse um aspecto mental que pode afetar os atletas. Outro fator é o físico, quando mais se joga mais cansados estão os atletas, o que os leva em momentos a não conseguir performar o movimento do arremesso corretamente. 
+    
+    # SHOT PER GAME PERIOD BAR PLOT
+
+    plt.figure(figsize=(20,12))
+    fig5 = sns.countplot(data=nba_shots, x='PERIOD', palette = 'husl', hue = 'EVENT_TYPE')
+    fig5.set_xlabel('SHOT_TYPE', fontsize=20)
+    fig5.set_ylabel('COUNT', fontsize=20)
+    fig5.tick_params(labelsize=20)
+    plt.title('SHOT TYPE PER GAME PERIOD', fontsize = 20)
+    for p in fig5.patches:
+        txt = str(p.get_height().round(2))
+        txt_x = p.get_x() 
+        txt_y = p.get_height()
+        fig5.text(txt_x,txt_y,txt)
+    plt.show()
+    
+![shot_type_per_game_period](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_per_game_period.png)
     
     
 # Previsão de Arremessos utilizando modelos de Machine Learming
