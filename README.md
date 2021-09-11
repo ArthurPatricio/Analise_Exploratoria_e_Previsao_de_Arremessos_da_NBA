@@ -1020,18 +1020,34 @@ Função choose_season
 Os conjuntos de Treino e Teste do sub conjunto de arremessos do Stephen Curry ficaram com os seguintes formatos:
 
 * X_train e X_test possuíam 4 atributo(s) com variância igual a zero
+
+Os conjuntos de Treino e Teste do sub conjunto de arremessos do Stephen Curry ficaram com os seguintes formatos:
+
 * X_train: (9252, 138)
 * X_test: (2313, 138)
 * y_train: (9252,)
 * y_test: (2313,)
+
+O número de atributos cresceu consideravelmente dos 25 originais para os 138 do sub conjunto selecionado. O princpal fator para tamanha mudança foi a aaplicação do Dummy Coding que transformou os atributos categóricos em numéricos para poderem ser compreendidos pelos modelos.
     
 
 Para todos os modelos treinados foi utilizado o GridSaerchCV do Sklearn para realizar a tunagem de Hiper-parâmetros. Foi realizada a busca pelos Hiper-parâmetros que resultassem na melhor acurácia.
-    
+
+Os códigos contendo o treinamentos, as predições e as avaliações dos modelos que virão a seguir estão presentes no notebook "NBA_SHOT_CHARTS" mencionado no início desse relatório. Aqui iremos apenas tratar dos resultados e dos parâmetros utilizados. 
+
+Todos os modelos abaixo são provenientes da biblioteca SKLearn. A exceção fica para o modelo XGBOOST que pussui uma biblioteca própria de mesmo nome. 
+
+# Modelos de Machine Learning
+
+Todos os modelos de machine learning que serão usados nesse trabalho são do tipo supervisionado e de classificação. A escolha de quais tipos de modelos usar passa pela natureza dos dados que serão trabalhados como também o que deseja-se ser capaz de prever com tais modelos.
+
+Nós estamos trabalhando com um dataset de arremessos de jogadores da NBA. O nosso conjunto possui o resultado de cada arremesso logo, faz sentido usarmos modelos supervisionados, aqueles que são treinados tendo conhecimento do resultado de cada registro a ser usado no treinamento. 
+
+Dentro do grupo de modelos supervisionados, utilizaremos os de classificação já que, nosso intuito é poder prever se um arremesso entrou ou não.
 
 # SVM
 
-O modelo SVM conseguiu atingir 66% de acurácia e 63% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+O modelo SVM/SVC (Support Vector Classification) conseguiu atingir 66% de acurácia e 63% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
 
 * random_state = 100
 * C = 100 
@@ -1045,7 +1061,7 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 
 # Decision Tree
 
-O modelo Decision Tree conseguiu atingir 66% de acurácia e 66% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+O modelo Decision Tree Classifier conseguiu atingir 66% de acurácia e 66% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
 
 * random_state = 100
 * max_depth = 5  
@@ -1065,7 +1081,7 @@ Abaixo, pode-se ver a árvore de decisão do modelo treinado:
  
 # Random Forest
 
-O modelo Random Forest conseguiu atingir 70% de acurácia e 70% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+O modelo Random Forest Classifier conseguiu atingir 70% de acurácia e 70% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
 
 * random_state = 100
 * min_samples_leaf = 8
@@ -1104,8 +1120,20 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 
 ![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
 
+# Conclusão
+
+Após a avaliação de todos os modelos treinados, ficou claro que os modelos do tipo Comitê são os melhores entre os testados. Random Forest Classifier, que utiliza o método de bagging e XGBOOST, que utiliza boosting, foram os que obtiveram as melhores performances. Os resultados foram os esperados se considerarmos que os modelos do tipo Comitê são reconhecidamente bons para cenários onde temos um conjunto muito grande de dados e o problema é muito complexo. A complexidade do problema é um fator a ser bastante considerado pois, estamos tratando de de um tipo de evento, arremesso de basquete, que possui ínumeras variáveis que compõe e afetam o resultado.
+
+Esses resultados corroboram o favoritismo desses tipos de modelos para a previsão de arremessos. Resultados semelhantes foram encontrados por Brett Meehan em "Predicting NBA Shots" e Max Murakami-Moses em "Analysis of Machine Learning Models Predicting
+Basketball Shot Success". [2][3]
+
+# Referências
+
+    [1] Stephen Curry career stats. https://www.basketball-reference.com/players/c/curryst01.html, 2021.
+
+    [2] B. Meehan. Predicting NBA Shots. http://cs229.stanford.edu/proj2017/final-reports/5132133.pdf.
+
+    [3] M. Murakami-Moses. Analysis of Machine Learning Models Predicting Basketball Shot Success. https://www.the-iyrc.org/uploads/1/2/9/7/129787256/20_iyrc2020_35_final.pdf.
 
 
-
-    
 
