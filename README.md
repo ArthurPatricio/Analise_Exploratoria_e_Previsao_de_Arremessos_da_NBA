@@ -1067,13 +1067,13 @@ Abaixo, pode-se ver a árvore de decisão do modelo treinado:
 
 O modelo Random Forest conseguiu atingir 70% de acurácia e 70% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
 
-* random_state=100
-* min_samples_leaf=8
-* min_samples_split=10
-* max_features='auto' 
-* n_estimators=100
-* n_jobs=50
-* verbose=1
+* random_state = 100
+* min_samples_leaf = 8
+* min_samples_split = 10
+* max_features = 'auto' 
+* n_estimators = 100
+* n_jobs = 50
+* verbose = 1
 
 Entretando, se adicionado o hiper-parâmetro max_depth (por padrão possui valor nulo), que foi usado no modelo de Árvore de Desisão, ocorre uma queda tanto da acurácia como do F1 score, já que este hiper-parâmetro define um limite para a profundidade das árvores a serem treinadas. Normalmente esti tipo de limitação é definida para evitar o overfitting do modelo. Por exemplo, para max_depth = 10, acurárica e F1 score caem por volta de 67% e para max_depth = 5, ambos ficam em torno de 65%.
 
@@ -1090,15 +1090,15 @@ Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no
 
 O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 70% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram:
 
-* random_state=100
-* n_estimators=2000
-* objective="reg:logistic"
-* use_label_encoder=False
-* booster='gbtree'
-* alpha=10
-* max_depth=8
-* gamma=1e-2
-* colsample_bytree=0.4
+* random_state = 100
+* n_estimators = 2000
+* objective = "reg:logistic"
+* use_label_encoder = False
+* booster = 'gbtree'
+* alpha = 10
+* max_depth = 8
+* gamma = 1e-2
+* colsample_bytree = 0.4
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
