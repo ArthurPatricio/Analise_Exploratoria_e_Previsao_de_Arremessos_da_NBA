@@ -1075,7 +1075,7 @@ O modelo Random Forest conseguiu atingir 70% de acurácia e 70% de F1 score. Os 
 * n_jobs=50
 * verbose=1
 
-Entretando, se adicionado o hiper-parâmetro max_depth, que foi usado no modelo Decision Tree, ocorre uma queda tanto da acurácia como do F1 score, já que este hiper-parâmetro define um limite para a profundidade das árvores a serem treinadas. Por exemplo, para max_depth = 10, acurárica e F1 score caem por volta de 67% e para max_depth = 5, ambos ficam em torno de 65%.
+Entretando, se adicionado o hiper-parâmetro max_depth (por padrão possui valor nulo), que foi usado no modelo de Árvore de Desisão, ocorre uma queda tanto da acurácia como do F1 score, já que este hiper-parâmetro define um limite para a profundidade das árvores a serem treinadas. Normalmente esti tipo de limitação é definida para evitar o overfitting do modelo. Por exemplo, para max_depth = 10, acurárica e F1 score caem por volta de 67% e para max_depth = 5, ambos ficam em torno de 65%.
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
@@ -1086,10 +1086,12 @@ Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no
 ![Feature_Importances_RF](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/Feature_Importances_RF.png)
 
 
-# Gradient Boosting Classifier
+# XGBOOST
 
- 
+O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 70% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram:
 
+
+![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
 
 
 
