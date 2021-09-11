@@ -1090,6 +1090,17 @@ Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no
 
 O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 70% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram:
 
+* random_state=100
+* n_estimators=2000
+* objective="reg:logistic"
+* use_label_encoder=False
+* booster='gbtree'
+* alpha=10
+* max_depth=8
+* gamma=1e-2
+* colsample_bytree=0.4
+
+Abaixo, a matriz de confusão entre y_pred e y_test:
 
 ![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
 
