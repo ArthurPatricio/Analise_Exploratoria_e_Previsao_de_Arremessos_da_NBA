@@ -1033,7 +1033,7 @@ Para todos os modelos treinados foi utilizado o GridSaerchCV do Sklearn para rea
 
 O modelo SVM conseguiu atingir 66% de acurácia e 63% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
 
-* Random State = 100
+* random_state = 100
 * C = 100 
 * gamma = 0.0001
 * kernel = 'rbf'
@@ -1045,10 +1045,14 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 
 # Decision Tree
 
-O modelo Decision Tree conseguiu atingir 63% de acurácia e 62% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+O modelo Decision Tree conseguiu atingir 66% de acurácia e 66% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
 
-* max_depth = 4  
-* min_samples_leaf = 2.
+* random_state = 100
+* max_depth = 5  
+* min_samples_leaf = 5
+* min_samples_split = 10
+
+Durante a etapa de tunagem de hiper-parâmetros, o modelo chegou a alcançar 72% de acurácia e F1 escore com max_depth = 20, min_samples_leaf = 1 e min_samples_split=2. Apesar do resultado superior, tais valores para estes hiper-parâmetros podem significar a criação de uma árvora de decisão muito especializada no conjunto de dados de treino.
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
@@ -1061,11 +1065,17 @@ Abaixo, pode-se ver a árvore de decisão do modelo treinado:
  
 # Random Forest
 
-O modelo Random Fores conseguiu atingir 63% de acurácia e 63% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+O modelo Random Forest conseguiu atingir 70% de acurácia e 70% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
 
-* max_features = 11
-* min_samples_leaf = 8
-* n_estimators = 100
+* random_state=100
+* min_samples_leaf=8
+* min_samples_split=10
+* max_features='auto' 
+* n_estimators=100
+* n_jobs=50
+* verbose=1
+
+Entretando, se adicionado o hiper-parâmetro max_depth, que foi usado no modelo Decision Tree, ocorre uma queda tanto da acurácia como do F1 score, já que este hiper-parâmetro define um limite para a profundidade das árvores a serem treinadas. Por exemplo, para max_depth = 10, acurárica e F1 score caem por volta de 67% e para max_depth = 5, ambos ficam em torno de 65%.
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
