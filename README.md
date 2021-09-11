@@ -1031,11 +1031,12 @@ Para todos os modelos treinados foi utilizado o GridSaerchCV do Sklearn para rea
 
 # SVM
 
-O modelo SVM conseguiu atingir 64% de acurácia e 62% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+O modelo SVM conseguiu atingir 66% de acurácia e 63% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
 
+* Random State = 100
 * C = 100 
 * gamma = 0.0001
-* kernel = 'rbf'. 
+* kernel = 'rbf'
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
