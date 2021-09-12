@@ -1104,7 +1104,7 @@ Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no
 
 # XGBOOST
 
-O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 70% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram:
+O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 71% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram:
 
 * random_state = 100
 * n_estimators = 2000
@@ -1114,7 +1114,7 @@ O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 70%
 * alpha = 10
 * max_depth = 8
 * gamma = 1e-2
-* colsample_bytree = 0.4
+* colsample_bytree = 0.5
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
