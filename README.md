@@ -3,7 +3,7 @@
 # Objetivo
 
 
-* Este projeto visa primeiramente, realizar uma análise exploratória dos dados obtidos das últimas 6 temporadas regulares da NBA (2015-16 a 2020-21) e treinar diferentes modelos de machine learning com o intuito de prever se um arremesso é bem-sucedido ou não.
+* Este projeto visa primeiramente, realizar uma análise exploratória dos dados obtidos das últimas 10 temporadas regulares da NBA (2011-12 a 2020-21) e treinar diferentes modelos de machine learning com o intuito de prever se um arremesso é bem-sucedido ou não.
 * Os dados foram obtidos através da API da NBA, o script 'get_players_shot_charts.ipynb' criado e a planilha com os ID's dos jogadores pode ser encontrados em: 
 
     - (https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA) 
@@ -62,8 +62,8 @@ As 10 planilhas foram importandas e inseridas em Dataframes utilizando a bibliot
     nba_shots_2017_18 = pd.read_excel('nba_shots_2017-18.xlsx', engine='openpyxl')
     nba_shots_2016_17 = pd.read_excel('nba_shots_2016-17.xlsx', engine='openpyxl')
     nba_shots_2015_16 = pd.read_excel('nba_shots_2015-16.xlsx', engine='openpyxl')
-    nba_shots_2014_15 = pd.read_excel('nba_shots_2015-16.xlsx', engine='openpyxl')
-    nba_shots_2013_14 = pd.read_excel('nba_shots_2015-16.xlsx', engine='openpyxl')
+    nba_shots_2014_15 = pd.read_excel('nba_shots_2014-15.xlsx', engine='openpyxl')
+    nba_shots_2013_14 = pd.read_excel('nba_shots_2013-14.xlsx', engine='openpyxl')
     nba_shots_2012_13 = pd.read_excel('nba_shots_2012-13.xlsx', engine='openpyxl')
     nba_shots_2011_12 = pd.read_excel('nba_shots_2011-12.xlsx', engine='openpyxl')
     
@@ -141,13 +141,13 @@ Os 10 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shot
 
 # Análise Inicial de nba_shots
 
-    O dataset nba_shots possui 1345097 registros e 25 atributos.
+    O dataset nba_shots possui 1276444 registros e 25 atributos.
 
     #Get nba_shots dataframe shape
 
     nba_shots.shape
     
-    (1345097, 25)
+    (1276444, 25)
     
     #Get nba_shots dataframe columns
 
@@ -165,52 +165,52 @@ Os 10 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shot
 
       nba_shots.describe()
       
-      	GAME_ID	GAME_EVENT_ID	PLAYER_ID	TEAM_ID	PERIOD	MINUTES_REMAINING	SECONDS_REMAINING	SHOT_DISTANCE	LOC_X	LOC_Y	SHOT_ATTEMPTED_FLAG	SHOT_MADE_FLAG	GAME_DATE
-    count	9.896170e+05	989617.000000	9.896170e+05	9.896170e+05	989617.000000	989617.000000	989617.000000	989617.000000	989617.000000	989617.000000	989617.0	989617.000000	9.896170e+05
-    mean	2.177412e+07	303.451679	6.966109e+05	1.610613e+09	2.467222	5.350666	28.862704	12.999324	-1.319433	92.180580	1.0	0.463385	2.018430e+07
-    std	1.661812e+05	189.289854	6.850221e+05	8.705219e+00	1.134207	3.429668	17.431075	10.434087	108.356158	94.014776	0.0	0.498658	1.789421e+04
-    min	2.150000e+07	2.000000	2.544000e+03	1.610613e+09	1.000000	0.000000	0.000000	0.000000	-250.000000	-52.000000	1.0	0.000000	2.015103e+07
-    25%	2.160104e+07	138.000000	2.023390e+05	1.610613e+09	1.000000	2.000000	14.000000	2.000000	-46.000000	11.000000	1.0	0.000000	2.017032e+07
-    50%	2.180042e+07	298.000000	2.035000e+05	1.610613e+09	2.000000	5.000000	29.000000	12.000000	0.000000	51.000000	1.0	0.000000	2.018121e+07
-    75%	2.190073e+07	454.000000	1.627741e+06	1.610613e+09	3.000000	8.000000	44.000000	24.000000	43.000000	175.000000	1.0	1.000000	2.020020e+07
-    max	2.200108e+07	1012.000000	1.630466e+06	1.610613e+09	8.000000	12.000000	59.000000	87.000000	250.000000	867.000000	1.0	1.000000	2.021052e+07
+      		GAME_ID	GAME_EVENT_ID	PLAYER_ID	TEAM_ID	PERIOD	MINUTES_REMAINING	SECONDS_REMAINING	SHOT_DISTANCE	LOC_X	LOC_Y	SHOT_ATTEMPTED_FLAG	SHOT_MADE_FLAG	GAME_DATE
+    count	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1276444.0	1.276444e+06	1.276444e+06
+    mean	2.166363e+07	2.912627e+02	5.816600e+05	1.610613e+09	2.466396e+00	5.322060e+00	2.882821e+01	1.277166e+01	-1.102589e+00	8.928210e+01	1.0	4.622435e-01	2.017333e+07
+    std	2.569733e+05	1.840131e+02	6.403388e+05	8.697130e+00	1.136435e+00	3.428325e+00	1.743894e+01	1.031249e+01	1.079558e+02	9.268699e+01	0.0	4.985726e-01	2.625195e+04
+    min	2.110000e+07	1.000000e+00	2.544000e+03	1.610613e+09	1.000000e+00	0.000000e+00	0.000000e+00	0.000000e+00	-2.500000e+02	-5.200000e+01	1.0	0.000000e+00	2.011122e+07
+    25%	2.150032e+07	1.300000e+02	2.019490e+05	1.610613e+09	1.000000e+00	2.000000e+00	1.400000e+01	2.000000e+00	-4.700000e+01	1.100000e+01	1.0	0.000000e+00	2.015121e+07
+    50%	2.170063e+07	2.850000e+02	2.030870e+05	1.610613e+09	2.000000e+00	5.000000e+00	2.900000e+01	1.200000e+01	0.000000e+00	4.800000e+01	1.0	0.000000e+00	2.018011e+07
+    75%	2.190031e+07	4.350000e+02	1.626161e+06	1.610613e+09	3.000000e+00	8.000000e+00	4.400000e+01	2.400000e+01	4.400000e+01	1.690000e+02	1.0	1.000000e+00	2.019120e+07
+    max	2.200108e+07	1.012000e+03	1.630466e+06	1.610613e+09	8.000000e+00	1.200000e+01	5.900000e+01	8.700000e+01	2.500000e+02	8.670000e+02	1.0	1.000000e+00	2.021052e+07
     
     #Get nba_shots dataframe info
 
     nba_shots.info()
     
     <class 'pandas.core.frame.DataFrame'>
-    Int64Index: 989617 entries, 0 to 123985
+    Int64Index: 1276444 entries, 0 to 41582
     Data columns (total 25 columns):
-     #   Column               Non-Null Count   Dtype 
-    ---  ------               --------------   ----- 
-     0   GRID_TYPE            989617 non-null  object
-     1   GAME_ID              989617 non-null  int64 
-     2   GAME_EVENT_ID        989617 non-null  int64 
-     3   PLAYER_ID            989617 non-null  int64 
-     4   PLAYER_NAME          989583 non-null  object
-     5   TEAM_ID              989617 non-null  int64 
-     6   TEAM_NAME            989617 non-null  object
-     7   PERIOD               989617 non-null  int64 
-     8   MINUTES_REMAINING    989617 non-null  int64 
-     9   SECONDS_REMAINING    989617 non-null  int64 
-     10  EVENT_TYPE           989617 non-null  object
-     11  ACTION_TYPE          989617 non-null  object
-     12  SHOT_TYPE            989617 non-null  object
-     13  SHOT_ZONE_BASIC      989617 non-null  object
-     14  SHOT_ZONE_AREA       989617 non-null  object
-     15  SHOT_ZONE_RANGE      989617 non-null  object
-     16  SHOT_DISTANCE        989617 non-null  int64 
-     17  LOC_X                989617 non-null  int64 
-     18  LOC_Y                989617 non-null  int64 
-     19  SHOT_ATTEMPTED_FLAG  989617 non-null  int64 
-     20  SHOT_MADE_FLAG       989617 non-null  int64 
-     21  GAME_DATE            989617 non-null  int64 
-     22  HTM                  989617 non-null  object
-     23  VTM                  989617 non-null  object
-     24  SEASON_ID            989617 non-null  object
+     #   Column               Non-Null Count    Dtype 
+    ---  ------               --------------    ----- 
+     0   GRID_TYPE            1276444 non-null  object
+     1   GAME_ID              1276444 non-null  int64 
+     2   GAME_EVENT_ID        1276444 non-null  int64 
+     3   PLAYER_ID            1276444 non-null  int64 
+     4   PLAYER_NAME          1276410 non-null  object
+     5   TEAM_ID              1276444 non-null  int64 
+     6   TEAM_NAME            1276444 non-null  object
+     7   PERIOD               1276444 non-null  int64 
+     8   MINUTES_REMAINING    1276444 non-null  int64 
+     9   SECONDS_REMAINING    1276444 non-null  int64 
+     10  EVENT_TYPE           1276444 non-null  object
+     11  ACTION_TYPE          1276444 non-null  object
+     12  SHOT_TYPE            1276444 non-null  object
+     13  SHOT_ZONE_BASIC      1276444 non-null  object
+     14  SHOT_ZONE_AREA       1276444 non-null  object
+     15  SHOT_ZONE_RANGE      1276444 non-null  object
+     16  SHOT_DISTANCE        1276444 non-null  int64 
+     17  LOC_X                1276444 non-null  int64 
+     18  LOC_Y                1276444 non-null  int64 
+     19  SHOT_ATTEMPTED_FLAG  1276444 non-null  int64 
+     20  SHOT_MADE_FLAG       1276444 non-null  int64 
+     21  GAME_DATE            1276444 non-null  int64 
+     22  HTM                  1276444 non-null  object
+     23  VTM                  1276444 non-null  object
+     24  SEASON_ID            1276444 non-null  object
     dtypes: int64(13), object(12)
-    memory usage: 216.3+ MB
+    memory usage: 253.2+ MB
 
 # Checagem de valores nulos
 
@@ -770,13 +770,13 @@ Abaixo podemos ver que média de acerto cai com o avanço dos períodos, algo qu
     
 ![shot_type_per_game_period](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_per_game_period.png)
 
-Média Primeiro Período: 169006/(191077 + 169006) = 0,4694 -> 46,94%
+Média Primeiro Período: 160448/(180602 + 160448) = 0,4705 -> 47,05%
 
-Média Segundo Período: 152177/(175035 + 152177) = 0,4650 -> 46,50%
+Média Segundo Período: 144509/(166206 + 144509) = 0,4651 -> 46,51%
  
-Média Terceiro Período: 157762/(183722 + 157762) = 0,4620 -> 46,20%
+Média Terceiro Período: 149349/(174432 + 149349) = 0,4613 -> 46,13%
  
-Média Quarto Período: 138886/(167738 + 138886) = 0,4530 -> 45,30%
+Média Quarto Período: 131855/(159778 + 131855) = 0,4521 -> 45,21%
     
 # Previsão de Arremessos utilizando modelos de Machine Learming
 
@@ -872,15 +872,15 @@ Em 10 temporadas, o atelta estreou na temporada 2009-10, Curry arremesou mais bo
 
 Apesar de sua extrema capacidade na bola de 3, Curry ainda sim acerta percentualmente mais bolas de 2 do que de 3, como pode ser visto no gráfico abaixo. 
 
-Média nos arremessos de 2 pontos: 2840/(2840 + 2403) = 0,5417 -> 54,17%
+Média nos arremessos de 2 pontos: 2792/(2490 + 2792) = 0,5286 -> 52,86%
 
-Media nos arremessos de 3 pontos: 2768/(3554 + 2768) = 0,4378 -> 43,78%
+Media nos arremessos de 3 pontos: 2513/(3302 + 2513) = 0,4322 -> 43,22%
 
-Média geral: (2840 + 2768)/(2840 + 2403 + 3554 + 2768) = 0,4849 -> 48,49%
+Média geral: (2792 + 2513)/(2490 + 2792 + 3302 + 2513) = 0,4781 -> 47,81%
 
-A diferença nos valores é absolutamente normal dada a natureza do jogo de basquete, a bola de 3 é uma ação ofensiva de maior risco e maior recompensa.
+A diferença nas médias é absolutamente normal dada a natureza do jogo de basquete, a bola de 3 é uma ação ofensiva de maior risco e maior recompensa.
 
-Hoje, os times notam que esse maior risco vale ser encarado. Tendo em consideração as médias do Curry. Como calculado, ele acerta em média 54,17% dos seus arremessos de 2 pontos, em um cenário em que tente 10 desses arremessos, ele acertaria 5 e isso resultaria num total de 10 pontos. Já se fizer as mesmas 10 tentativas para a bola de 3, com sua média de 43,78%, acertaria 4 bolas que somariam um total de 12 pontos.
+Hoje, os times notam que esse maior risco vale ser encarado. Tendo em consideração as médias do Curry. Como calculado, ele acerta em média 52,86% dos seus arremessos de 2 pontos, em um cenário em que tente 10 desses arremessos, ele acertaria 5 e isso resultaria num total de 10 pontos. Já se fizer as mesmas 10 tentativas para a bola de 3, com sua média de 43,22%, acertaria 4 bolas que somariam um total de 12 pontos.
 
 Obviamente que esse cenário que ignora dezenas de fatores que levam ao sucesso ou não de um arremesso em um jogo oficial de basquete na NBA. Porém, essa lógica é a base do pensamento que levam hoje muitos dos times e sua comissões técnicas a priorizarem a bola de 3 mesmo que isso faça com que a média de acerto dos arremessos caia.
 
@@ -904,6 +904,14 @@ Diferente do que foi visto para o dataset geral, se analizarmos a performance de
     plt.show()
     
 ![shot_type_per_game_period_stephen_curry](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_per_game_period_stephen_curry.png)
+
+Média Primeiro Período: 1734/(1892 + 1734) = 0,4782 -> 47,82%
+
+Média Segundo Período: 1124/(1174 + 1124) = 0,4891 -> 48,91%
+ 
+Média Terceiro Período: 1828/(1888 + 1828) = 0,4919 -> 49,19%
+ 
+Média Quarto Período: 871/(940 + 871) = 0,4809 -> 48,09%
 
 Funcão choose_player
 
@@ -1047,7 +1055,9 @@ Dentro do grupo de modelos supervisionados, utilizaremos os de classificação j
 
 # SVM
 
-O modelo SVM/SVC (Support Vector Classification) conseguiu atingir 66% de acurácia e 63% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+O modelo SVM/SVC (Support Vector Classification) conseguiu atingir 66% de acurácia e 63% de F1 score. [2]
+
+Os melhores valores para os hiper-parâmetros utilizados foram: 
 
 * random_state = 100
 * C = 100 
@@ -1061,7 +1071,9 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 
 # Decision Tree
 
-O modelo Decision Tree Classifier conseguiu atingir 66% de acurácia e 66% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+O modelo Decision Tree Classifier conseguiu atingir 66% de acurácia e 66% de F1 score. [3]
+
+Os melhores valores para os hiper-parâmetros utilizados foram: 
 
 * random_state = 100
 * max_depth = 5  
@@ -1081,7 +1093,9 @@ Abaixo, pode-se ver a árvore de decisão do modelo treinado:
  
 # Random Forest
 
-O modelo Random Forest Classifier conseguiu atingir 70% de acurácia e 70% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram: 
+O modelo Random Forest Classifier conseguiu atingir 70% de acurácia e 70% de F1 score. [4]
+
+Os melhores valores para os hiper-parâmetros utilizados foram: 
 
 * random_state = 100
 * min_samples_leaf = 8
@@ -1104,7 +1118,9 @@ Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no
 
 # XGBOOST
 
-O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 71% de F1 score. Os melhores valores para os hiper-parâmetros utilizados foram:
+O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 71% de F1 score. [5]
+
+Os melhores valores para os hiper-parâmetros utilizados foram:
 
 * random_state = 100
 * n_estimators = 2000
@@ -1125,15 +1141,23 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 Após a avaliação de todos os modelos treinados, ficou claro que os modelos do tipo Comitê são os melhores entre os testados. Random Forest Classifier, que utiliza o método de bagging e XGBOOST, que utiliza boosting, foram os que obtiveram as melhores performances. Os resultados foram os esperados se considerarmos que os modelos do tipo Comitê são reconhecidamente bons para cenários onde temos um conjunto muito grande de dados e o problema é muito complexo. A complexidade do problema é um fator a ser bastante considerado pois, estamos tratando de de um tipo de evento, arremesso de basquete, que possui ínumeras variáveis que compõe e afetam o resultado.
 
 Esses resultados corroboram o favoritismo desses tipos de modelos para a previsão de arremessos. Resultados semelhantes foram encontrados por Brett Meehan em "Predicting NBA Shots" e Max Murakami-Moses em "Analysis of Machine Learning Models Predicting
-Basketball Shot Success". [2][3]
+Basketball Shot Success". [6][7]
 
 # Referências
 
     [1] Stephen Curry career stats. https://www.basketball-reference.com/players/c/curryst01.html, 2021.
 
-    [2] B. Meehan. Predicting NBA Shots. http://cs229.stanford.edu/proj2017/final-reports/5132133.pdf.
+    [2] Support Vector Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html, 2021.
 
-    [3] M. Murakami-Moses. Analysis of Machine Learning Models Predicting Basketball Shot Success. https://www.the-iyrc.org/uploads/1/2/9/7/129787256/20_iyrc2020_35_final.pdf.
+    [3] Decision Tree Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html, 2021.
+
+    [4] Random Forest Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html, 2021.
+
+    [5] XGBOOST. https://xgboost.readthedocs.io/en/latest/, 2021.
+
+    [6] B. Meehan. Predicting NBA Shots. http://cs229.stanford.edu/proj2017/final-reports/5132133.pdf, 2017.
+
+    [7] M. Murakami-Moses. Analysis of Machine Learning Models Predicting Basketball Shot Success. https://www.the-iyrc.org/uploads/1/2/9/7/129787256/20_iyrc2020_35_final.pdf.
 
 
 
