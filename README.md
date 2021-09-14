@@ -3,7 +3,7 @@
 # Objetivo
 
 
-* Este projeto visa primeiramente, realizar uma análise exploratória dos dados obtidos das últimas 10 temporadas regulares da NBA (2011-12 a 2020-21) e treinar diferentes modelos de machine learning com o intuito de prever se um arremesso é bem-sucedido ou não.
+* Este projeto visa primeiramente, realizar uma análise exploratória dos dados obtidos das últimas 12 temporadas regulares da NBA (2009-10 a 2020-21) e treinar diferentes modelos de machine learning com o intuito de prever se um arremesso é bem-sucedido ou não.
 * Os dados foram obtidos através da API da NBA, o script 'get_players_shot_charts.ipynb' criado e a planilha com os ID's dos jogadores pode ser encontrados em: 
 
     - (https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA) 
@@ -128,26 +128,38 @@ Cada Dataframe tem a coluna "Unnamed: 0" retirada e a coluna "SEASON_ID" adicion
     nba_shots_2011_12.drop(['Unnamed: 0'], axis=1, inplace=True)
     nba_shots_2011_12['SEASON_ID'] = '2011-12'
     nba_shots_2011_12.head()
+    
+    #Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2010_11
 
-Os 10 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shots'.
+    nba_shots_2010_11.drop(['Unnamed: 0'], axis=1, inplace=True)
+    nba_shots_2010_11['SEASON_ID'] = '2010-11'
+    nba_shots_2010_11.head()
+    
+    #Drop "Unnamed: 0" column, Add "SEASON_ID" column in nba_shots_2009_10
+
+    nba_shots_2009_10.drop(['Unnamed: 0'], axis=1, inplace=True)
+    nba_shots_2009_10['SEASON_ID'] = '2009-10'
+    nba_shots_2009_10.head()
+
+Os 12 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shots'.
 
     #Create nba_shots as a concatenation of the 10 Dataframes from each reagular season
 
     nba_shots = pd.concat([nba_shots_2020_21, nba_shots_2019_20, nba_shots_2018_19, nba_shots_2017_18, nba_shots_2016_17, nba_shots_2015_16, nba_shots_2014_15, nba_shots_2013_14,
-                            nba_shots_2012_13, nba_shots_2011_12], sort=False)
+                            nba_shots_2012_13, nba_shots_2011_12, nba_shots_2010_11, nba_shots_2009_10], sort=False)
 
     nba_shots.head()
 
 
 # Análise Inicial de nba_shots
 
-    O dataset nba_shots possui 1276444 registros e 25 atributos.
+    O dataset nba_shots possui 2401273 registros e 25 atributos.
 
     #Get nba_shots dataframe shape
 
     nba_shots.shape
     
-    (1276444, 25)
+    (2401273, 25)
     
     #Get nba_shots dataframe columns
 
@@ -165,52 +177,52 @@ Os 10 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shot
 
       nba_shots.describe()
       
-      		GAME_ID	GAME_EVENT_ID	PLAYER_ID	TEAM_ID	PERIOD	MINUTES_REMAINING	SECONDS_REMAINING	SHOT_DISTANCE	LOC_X	LOC_Y	SHOT_ATTEMPTED_FLAG	SHOT_MADE_FLAG	GAME_DATE
-    count	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1.276444e+06	1276444.0	1.276444e+06	1.276444e+06
-    mean	2.166363e+07	2.912627e+02	5.816600e+05	1.610613e+09	2.466396e+00	5.322060e+00	2.882821e+01	1.277166e+01	-1.102589e+00	8.928210e+01	1.0	4.622435e-01	2.017333e+07
-    std	2.569733e+05	1.840131e+02	6.403388e+05	8.697130e+00	1.136435e+00	3.428325e+00	1.743894e+01	1.031249e+01	1.079558e+02	9.268699e+01	0.0	4.985726e-01	2.625195e+04
-    min	2.110000e+07	1.000000e+00	2.544000e+03	1.610613e+09	1.000000e+00	0.000000e+00	0.000000e+00	0.000000e+00	-2.500000e+02	-5.200000e+01	1.0	0.000000e+00	2.011122e+07
-    25%	2.150032e+07	1.300000e+02	2.019490e+05	1.610613e+09	1.000000e+00	2.000000e+00	1.400000e+01	2.000000e+00	-4.700000e+01	1.100000e+01	1.0	0.000000e+00	2.015121e+07
-    50%	2.170063e+07	2.850000e+02	2.030870e+05	1.610613e+09	2.000000e+00	5.000000e+00	2.900000e+01	1.200000e+01	0.000000e+00	4.800000e+01	1.0	0.000000e+00	2.018011e+07
-    75%	2.190031e+07	4.350000e+02	1.626161e+06	1.610613e+09	3.000000e+00	8.000000e+00	4.400000e+01	2.400000e+01	4.400000e+01	1.690000e+02	1.0	1.000000e+00	2.019120e+07
-    max	2.200108e+07	1.012000e+03	1.630466e+06	1.610613e+09	8.000000e+00	1.200000e+01	5.900000e+01	8.700000e+01	2.500000e+02	8.670000e+02	1.0	1.000000e+00	2.021052e+07
+	GAME_ID	GAME_EVENT_ID	PLAYER_ID	TEAM_ID	PERIOD	MINUTES_REMAINING	SECONDS_REMAINING	SHOT_DISTANCE	LOC_X	LOC_Y	SHOT_ATTEMPTED_FLAG	SHOT_MADE_FLAG	GAME_DATE
+    count	2.401273e+06	2.401273e+06	2.401273e+06	2.401273e+06	2.401273e+06	2.401273e+06	2.401273e+06	2.401273e+06	2.401273e+06	2.401273e+06	2401273.0	2.401273e+06	2.401273e+06
+    mean	2.145609e+07	2.761712e+02	3.851088e+05	1.610613e+09	2.481667e+00	5.334222e+00	2.878021e+01	1.262537e+01	-6.563252e-01	8.507122e+01	1.0	4.568135e-01	2.015256e+07
+    std	3.413750e+05	1.742924e+02	5.472422e+05	8.643052e+00	1.137764e+00	3.461528e+00	1.744793e+01	1.012164e+01	1.096600e+02	9.044397e+01	0.0	4.981315e-01	3.440602e+04
+    min	2.090000e+07	1.000000e+00	2.550000e+02	1.610613e+09	1.000000e+00	0.000000e+00	0.000000e+00	0.000000e+00	-2.500000e+02	-5.200000e+01	1.0	0.000000e+00	2.009103e+07
+    25%	2.120024e+07	1.260000e+02	1.011810e+05	1.610613e+09	1.000000e+00	2.000000e+00	1.400000e+01	2.000000e+00	-5.200000e+01	9.000000e+00	1.0	0.000000e+00	2.012120e+07
+    50%	2.150016e+07	2.700000e+02	2.019670e+05	1.610613e+09	2.000000e+00	5.000000e+00	2.900000e+01	1.300000e+01	0.000000e+00	4.500000e+01	1.0	0.000000e+00	2.015112e+07
+    75%	2.170122e+07	4.130000e+02	2.034870e+05	1.610613e+09	3.000000e+00	8.000000e+00	4.400000e+01	2.300000e+01	5.000000e+01	1.600000e+02	1.0	1.000000e+00	2.018041e+07
+    max	2.200108e+07	1.012000e+03	1.630466e+06	1.610613e+09	8.000000e+00	1.200000e+01	5.900000e+01	8.900000e+01	2.500000e+02	8.840000e+02	1.0	1.000000e+00	2.021052e+07
     
     #Get nba_shots dataframe info
 
     nba_shots.info()
     
     <class 'pandas.core.frame.DataFrame'>
-    Int64Index: 1276444 entries, 0 to 41582
+    Int64Index: 2401273 entries, 0 to 200965
     Data columns (total 25 columns):
-     #   Column               Non-Null Count    Dtype 
-    ---  ------               --------------    ----- 
-     0   GRID_TYPE            1276444 non-null  object
-     1   GAME_ID              1276444 non-null  int64 
-     2   GAME_EVENT_ID        1276444 non-null  int64 
-     3   PLAYER_ID            1276444 non-null  int64 
-     4   PLAYER_NAME          1276410 non-null  object
-     5   TEAM_ID              1276444 non-null  int64 
-     6   TEAM_NAME            1276444 non-null  object
-     7   PERIOD               1276444 non-null  int64 
-     8   MINUTES_REMAINING    1276444 non-null  int64 
-     9   SECONDS_REMAINING    1276444 non-null  int64 
-     10  EVENT_TYPE           1276444 non-null  object
-     11  ACTION_TYPE          1276444 non-null  object
-     12  SHOT_TYPE            1276444 non-null  object
-     13  SHOT_ZONE_BASIC      1276444 non-null  object
-     14  SHOT_ZONE_AREA       1276444 non-null  object
-     15  SHOT_ZONE_RANGE      1276444 non-null  object
-     16  SHOT_DISTANCE        1276444 non-null  int64 
-     17  LOC_X                1276444 non-null  int64 
-     18  LOC_Y                1276444 non-null  int64 
-     19  SHOT_ATTEMPTED_FLAG  1276444 non-null  int64 
-     20  SHOT_MADE_FLAG       1276444 non-null  int64 
-     21  GAME_DATE            1276444 non-null  int64 
-     22  HTM                  1276444 non-null  object
-     23  VTM                  1276444 non-null  object
-     24  SEASON_ID            1276444 non-null  object
+     #   Column               Dtype 
+    ---  ------               ----- 
+     0   GRID_TYPE            object
+     1   GAME_ID              int64 
+     2   GAME_EVENT_ID        int64 
+     3   PLAYER_ID            int64 
+     4   PLAYER_NAME          object
+     5   TEAM_ID              int64 
+     6   TEAM_NAME            object
+     7   PERIOD               int64 
+     8   MINUTES_REMAINING    int64 
+     9   SECONDS_REMAINING    int64 
+     10  EVENT_TYPE           object
+     11  ACTION_TYPE          object
+     12  SHOT_TYPE            object
+     13  SHOT_ZONE_BASIC      object
+     14  SHOT_ZONE_AREA       object
+     15  SHOT_ZONE_RANGE      object
+     16  SHOT_DISTANCE        int64 
+     17  LOC_X                int64 
+     18  LOC_Y                int64 
+     19  SHOT_ATTEMPTED_FLAG  int64 
+     20  SHOT_MADE_FLAG       int64 
+     21  GAME_DATE            int64 
+     22  HTM                  object
+     23  VTM                  object
+     24  SEASON_ID            object
     dtypes: int64(13), object(12)
-    memory usage: 253.2+ MB
+    memory usage: 476.3+ MB
 
 # Checagem de valores nulos
 
@@ -355,6 +367,42 @@ Abaixo temos as plotagens utilizando a função .hexbin da biblioteca matplotlib
 Nessa sequência de gráficos possível notar como o arremesso de 3 pontos se tornou cada vez mais o arremesso* mais popular na liga com o passar das temporadas.
 
 *Arremessos não incluem ações ofensivas como bandejas e enterradas, que são feitas próximas da cesta e que continuam proeminentes na liga como pode ser notado em todas as imagens.
+
+    # 2009-10 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2009-10') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2009-10') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2009-10 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
+
+![2009-10_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2009-10_regular_season_made_shots.png)
+
+    # 2010-11 REGULAR SEASON MADE SHOTS
+
+    # Create figure and axes
+    fig = plt.figure(figsize=(10, 9))
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    # Draw court
+    ax = create_court(ax, 'black')
+
+    # Plot scatter of shots
+    ax.hexbin(nba_shots[(nba_shots['SEASON_ID'] == '2010-11') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_X'],
+                nba_shots[(nba_shots['SEASON_ID'] == '2010-11') & (nba_shots['SHOT_MADE_FLAG']==1)]['LOC_Y'] +60, gridsize=(30, 30), extent=(-300, 300, 0, 940), bins='log', cmap='Greens')
+
+    plt.title('2010-11 REGULAR SEASON MADE SHOTS', fontsize = 20)
+    plt.show()
+    
+![2010-11_regular_season_made_shots](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2010-11_regular_season_made_shots.png)
 
     # 2011-12 REGULAR SEASON MADE SHOTS
 
@@ -611,9 +659,11 @@ Os três gráficos acima nos mostram como os arremessos de 3 pontos se tornaram 
 
 # 4. Distribuição de arrmessos por distância e tipo de Arremesso (2 ou 3 pontos)
 
-O gráfico abaixo apresenta a distribuição dos arremessos das 10 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso (2 ou 3 pontos).
+O gráfico abaixo apresenta a distribuição dos arremessos das 12 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso (2 ou 3 pontos).
 
-Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre por arremessos de longa distância (atrás da linha de 3 pontos) ou por arremessos, bandejas ou enterradas feitos bem próximos da cesta. Os arremessos de média distância se tornaram bem menos utilizados.
+Nele nota-se ainda o predomínio dos arremessos de 2 pontos, bandejas ou enterradas feitos bem próximos da cesta. Com o arremesso de longa distância, de 3 pontos, já com quantidade considerável.
+
+Nos gráficos a seguir  onde comparamos as distribuições da primeira e útima do nosso dataset, vemos que hoje, há o predomínio da bola lonfa, de 3 pontos.
 
     # SHOT DISTANCE DISTRIBUTION PLOT
 
@@ -628,7 +678,7 @@ Nele é fácil de se notar que a maioria das tentatidas de pontuação ocorre po
 
 ![shot_distance_distribution](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution.png)
 
-Analisando as plotagens abaixo, distribuições tais como a anterior só que agora específicas para as temporadas 2011-21 e 2020-21, respectivamente primeira e última temporadas do nosso conjunto de dados, notamos com clareza a mudança no padrão das ações ofensivas com o passar dos anos. Arremessos de média distância deram espaço para os arremesos de 3 pontos.
+Analisando as plotagens abaixo, distribuições tais como a anterior só que agora específicas para as temporadas 2009-11 e 2020-21, respectivamente primeira e última temporadas do nosso conjunto de dados, notamos com clareza a mudança no padrão das ações ofensivas com o passar dos anos. Arremessos de média distância deram espaço para os arremesos de 3 pontos.
 
     # SHOT DISTANCE DISTRIBUTION PLOT 2011-12 SEASON
 
@@ -739,7 +789,7 @@ Análogo ao que foi feito com os gráficos de distribuição, como pode ser vist
 
 # 6. Arremessos por Tipo de Acão ofensiva
 
-O gráfico abaixo mostra todos os arremesoss tentados nas 10 temporadas pelo tipo de ação ofensiva.
+O gráfico abaixo mostra todos os arremesoss tentados nas 12 temporadas pelo tipo de ação ofensiva.
 
 Nele nota-se que o 'jump shot' (ou arremesso) é o tipo de arremesso mais tentado na liga.
 
@@ -770,13 +820,13 @@ Abaixo podemos ver que média de acerto cai com o avanço dos períodos, algo qu
     
 ![shot_type_per_game_period](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_per_game_period.png)
 
-Média Primeiro Período: 160448/(180602 + 160448) = 0,4705 -> 47,05%
+Média Primeiro Período: 291535/(333488 + 291535) = 0,4664 -> 46,64%
 
-Média Segundo Período: 144509/(166206 + 144509) = 0,4651 -> 46,51%
+Média Segundo Período: 276689/(324187 + 276689) = 0,4605 -> 46,05%
  
-Média Terceiro Período: 149349/(174432 + 149349) = 0,4613 -> 46,13%
+Média Terceiro Período: 268154/(320667 + 268154) = 0,4554 -> 45,54%
  
-Média Quarto Período: 131855/(159778 + 131855) = 0,4521 -> 45,21%
+Média Quarto Período: 253673/(316060 + 253673) = 0,4452 -> 44,52%
     
 # Previsão de Arremessos utilizando modelos de Machine Learming
 
@@ -831,7 +881,9 @@ Como pode ser visto na distribuição de arremessos por distância e tipo aprese
 
 Nos gráficos de barra abaixo, que mostram os arremessos divididos pelo tipo (2 e 3 pontos) e por tipo e resultado respsctivamente. Notamos que o Stephen Curry foge do comportamento visto nestes mesmos gráficos que foram plotados considerando o dataset inteiro.
 
-Em 10 temporadas, o atelta estreou na temporada 2009-10, Curry arremesou mais bolas de 3 pontos do que de 2. Algo impensável antes do surgimento do mesmo. Vale lembrar que ele já é considerado quase que unanimamente por mídia especializada e fãs, como o melhor arremessador de 3 pontos da história da liga. Tendo sob seu nome vários recordes como por exemplo, mais arremessos de 3 pontos acertados em uma temporada regular (2015-2016) e mais arremessos de 3 pontos acertados em playoffs (na história).[1]
+Em 12 temporadas, o atleta estreou na temporada 2009-10, Curry arremesou um pouco mais bolas de 2 do que de 3 e deve inverter essa ordem dentro das próximas temporadas visto que a diferença é de apenas 219 arremessos e que ele tem tentado mais arremessos de 3 do que de 2 nas últimas 6 temporadas.  
+
+Esses números eram algo impensável antes do surgimento do mesmo. Vale lembrar que ele já é considerado quase que unanimamente por mídia especializada e fãs, como o melhor arremessador de 3 pontos da história da liga. Tendo sob seu nome vários recordes como por exemplo, mais arremessos de 3 pontos acertados em uma temporada regular (2015-2016) e mais arremessos de 3 pontos acertados em playoffs (na história).[1]
 
     # SHOT TYPE BAR PLOT STEPHEN CURRY
 
@@ -872,21 +924,21 @@ Em 10 temporadas, o atelta estreou na temporada 2009-10, Curry arremesou mais bo
 
 Apesar de sua extrema capacidade na bola de 3, Curry ainda sim acerta percentualmente mais bolas de 2 do que de 3, como pode ser visto no gráfico abaixo. 
 
-Média nos arremessos de 2 pontos: 2792/(2490 + 2792) = 0,5286 -> 52,86%
+Média nos arremessos de 2 pontos: 3508/(3248 + 3508) = 0,5192 -> 51,92%
 
-Media nos arremessos de 3 pontos: 2513/(3302 + 2513) = 0,4322 -> 43,22%
+Media nos arremessos de 3 pontos: 2830/(3707 + 2830) = 0,4329 -> 43,29%
 
-Média geral: (2792 + 2513)/(2490 + 2792 + 3302 + 2513) = 0,4781 -> 47,81%
+Média geral: (3508 + 2830)/(3508 + 3248 + 2830 + 3707) = 0,4668 -> 46,68%
 
-A diferença nas médias é absolutamente normal dada a natureza do jogo de basquete, a bola de 3 é uma ação ofensiva de maior risco e maior recompensa.
+A diferença nas médias é absolutamente normal dada a natureza do jogo de basquete, a bola de 3 é uma ação ofensiva de maior risco e maior recompensa. A média de 43,29% na carreira na bola de 3 é atualmente a sétima melhor marca na história da liga e considerando que Curry arremessa bem mais do que os 6 acima, isso torna o seu rendimento ainda mais impressionante. [2]
 
-Hoje, os times notam que esse maior risco vale ser encarado. Tendo em consideração as médias do Curry. Como calculado, ele acerta em média 52,86% dos seus arremessos de 2 pontos, em um cenário em que tente 10 desses arremessos, ele acertaria 5 e isso resultaria num total de 10 pontos. Já se fizer as mesmas 10 tentativas para a bola de 3, com sua média de 43,22%, acertaria 4 bolas que somariam um total de 12 pontos.
+Hoje, os times notam que esse maior risco vale ser encarado. Tendo em consideração as médias do Curry. Como calculado, ele acerta em média 51,92% dos seus arremessos de 2 pontos, em um cenário em que tente 10 desses arremessos, ele acertaria 5 e isso resultaria num total de 10 pontos. Já se fizer as mesmas 10 tentativas para a bola de 3, com sua média de 43,29%, acertaria 4 bolas que somariam um total de 12 pontos.
 
 Obviamente que esse cenário que ignora dezenas de fatores que levam ao sucesso ou não de um arremesso em um jogo oficial de basquete na NBA. Porém, essa lógica é a base do pensamento que levam hoje muitos dos times e sua comissões técnicas a priorizarem a bola de 3 mesmo que isso faça com que a média de acerto dos arremessos caia.
 
 Diferente do que foi visto para o dataset geral, se analizarmos a performance de acerto de arremessos por período de jogo, Curry não aparenta seguir o mesmo padrão que o resto da liga, onde as médias de acerto caem com o avançar do jogo.
 
-    # SHOT PER GAME PERIOD BAR PLOT
+    # SHOT PER GAME PERIOD BAR PLOT STEPHEN CURRY
 
     plt.figure(figsize=(20,12))
     fig12 = sns.countplot(data=nba_shots, x=nba_shots[nba_shots['PLAYER_NAME'] == 'Stephen Curry']['PERIOD'],
