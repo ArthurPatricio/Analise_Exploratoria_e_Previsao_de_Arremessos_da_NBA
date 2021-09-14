@@ -693,7 +693,7 @@ Analisando as plotagens abaixo, distribuições tais como a anterior só que ago
     plt.xlim(0,40)
     plt.show()
 
-![shot_distance_distribution_2011-12](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_2011-12.png)
+![shot_distance_distribution_2009-10](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_2009-10.png)
 
     # SHOT DISTANCE DISTRIBUTION PLOT 2020-21 SEASON
 
