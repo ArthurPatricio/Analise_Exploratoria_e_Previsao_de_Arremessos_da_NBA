@@ -680,20 +680,20 @@ Nos gráficos a seguir  onde comparamos as distribuições da primeira e útima 
 
 Analisando as plotagens abaixo, distribuições tais como a anterior só que agora específicas para as temporadas 2009-11 e 2020-21, respectivamente primeira e última temporadas do nosso conjunto de dados, notamos com clareza a mudança no padrão das ações ofensivas com o passar dos anos. Arremessos de média distância deram espaço para os arremesos de 3 pontos.
 
-    # SHOT DISTANCE DISTRIBUTION PLOT 2011-12 SEASON
+    # SHOT DISTANCE DISTRIBUTION PLOT 2009-10 SEASON
 
-    plt.figure(figsize=(20,12))
-    fig2 = sns.histplot(data=nba_shots, 
-                        x=nba_shots[nba_shots['SEASON_ID'] == '2011-12']['SHOT_DISTANCE'], 
-                        hue = nba_shots[nba_shots['SEASON_ID'] == '2011-12']['SHOT_TYPE'])
-    fig2.set_xlabel('SHOT_DISTANCE', fontsize=20)
-    fig2.set_ylabel('COUNT', fontsize=20)
-    fig2.tick_params(labelsize=15)
-    plt.title('SHOT DISTANCE DISTRIBUTION 2011-12 SEASON', fontsize = 20)
-    plt.xlim(0,40)
-    plt.show()
+	plt.figure(figsize=(20,12))
+	fig2 = sns.histplot(data=nba_shots, 
+			    x=nba_shots[nba_shots['SEASON_ID'] == '2009-10']['SHOT_DISTANCE'], 
+			    hue = nba_shots[nba_shots['SEASON_ID'] == '2009-10']['SHOT_TYPE'])
+	fig2.set_xlabel('SHOT_DISTANCE', fontsize=20)
+	fig2.set_ylabel('COUNT', fontsize=20)
+	fig2.tick_params(labelsize=15)
+	plt.title('SHOT DISTANCE DISTRIBUTION 2009-10 SEASON', fontsize = 20)
+	plt.xlim(0,40)
+	plt.show()
 
-![shot_distance_distribution_2009-10](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_2009-10.png)
+![shot_distance_distribution_2009_10](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_distance_distribution_2009_10.png)
 
     # SHOT DISTANCE DISTRIBUTION PLOT 2020-21 SEASON
 
