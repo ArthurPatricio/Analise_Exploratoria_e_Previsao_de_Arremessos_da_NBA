@@ -768,7 +768,7 @@ Análogo ao que foi feito com os gráficos de distribuição, como pode ser vist
         fig6.text(txt_x,txt_y,txt)
     plt.show()
     
-![shot_type_2011-12_season_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_2011-12_season_bar_plot.png)
+![shot_type_2009-10_season_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_2009-10_season_bar_plot.png)
 
     # SHOT TYPE BAR PLOT
 
