@@ -1107,7 +1107,7 @@ Dentro do grupo de modelos supervisionados, utilizaremos os de classificação j
 
 # SVM
 
-O modelo SVM/SVC (Support Vector Classification) conseguiu atingir 66% de acurácia e 63% de F1 score. [3]
+O modelo SVM/SVC (Support Vector Classification) conseguiu atingir 64% de acurácia e 60% de F1 score. [3]
 
 Os melhores valores para os hiper-parâmetros utilizados foram: 
 
@@ -1123,7 +1123,7 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 
 # Decision Tree
 
-O modelo Decision Tree Classifier conseguiu atingir 66% de acurácia e 66% de F1 score. [4]
+O modelo Decision Tree Classifier conseguiu atingir 64% de acurácia e 64% de F1 score. [4]
 
 Os melhores valores para os hiper-parâmetros utilizados foram: 
 
@@ -1145,7 +1145,7 @@ Abaixo, pode-se ver a árvore de decisão do modelo treinado:
  
 # Random Forest
 
-O modelo Random Forest Classifier conseguiu atingir 70% de acurácia e 70% de F1 score. [5]
+O modelo Random Forest Classifier conseguiu atingir 65% de acurácia e 65% de F1 score. [5]
 
 Os melhores valores para os hiper-parâmetros utilizados foram: 
 
@@ -1170,7 +1170,7 @@ Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no
 
 # XGBOOST
 
-O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 71% de F1 score. [6]
+O modelo XGBOOST foi o que conseguiu melhores resultados, 65% de acurácia e 61% de F1 score. [6]
 
 Os melhores valores para os hiper-parâmetros utilizados foram:
 
@@ -1187,6 +1187,57 @@ Os melhores valores para os hiper-parâmetros utilizados foram:
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
 ![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
+
+# Análise separada dos tipos de arremessos
+
+Neste ponto, treinamos os modedelos com melhores performance, Random Forest e XGBOOST, com o conjunto de arremessos de 2 pontos e 3 pontos de Stephen Curry separadamente para analisar como isso afetará a performance dos modelos. Os valores dos hiper-parâmetros foram mantidos os mesmos para efeito de comparação.
+
+* Arremessos de 2 pontos:
+
+		Os conjuntos de Treino e Teste possuem os seguintes formatos:
+
+		X_train: (5404, 139)
+		X_test: (1352, 139)
+		y_train: (5404,)
+		y_test: (1352,)
+	
+		* Random Fores obteve 67% de acurácia e 67% de F1 score. XGBOOST obteve 66% de acurácia e 68% de F1 score.
+		* Abaixo, a matriz de confusão entre y_pred e y_test:
+
+![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
+
+* Arremessos de 3 pontos:
+
+		Os conjuntos de Treino e Teste possuem os seguintes formatos:
+		
+		X_train: (5229, 106)
+		X_test: (1308, 106)
+		y_train: (5229,)
+		y_test: (1308,)
+		
+		* Random Fores obteve 64% de acurácia e 62% de F1 score. XGBOOST obteve 62% de acurácia e 49% de F1 score.
+		* Abaixo, a matriz de confusão entre y_pred e y_test:
+
+![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
+
+Os modelos obtiveram maior sucesso em prever o resultado dos arremessos de 2 pontos. A diferença provavelmente vem da natureza dos arremessos. Enquanto arremessos de 3 pontos são feitos a uma maior distância e maior variadade de posições em relação à cesta, bolas de 2 pontos principalmente NBA atual, como vimos anteriormente, são prioritariamente bolas "chutadas" perto da cesta. Isso leva a crer, que essa menor variação no escopo dos lances de 2 pontos e sua maior chance de serem convertidos, favoreçam para uma melhor previsibilidade.
+
+Tendo conhecimento disso, foi decidido experimentar a novamente a performance de Random Forest e XGBOOST para todos os arremessos de um novo atleta. O jogador escolhido foi Blake Griffin. Griffin estreou na liga na mesma temporada de Stephen Curry (2009-10) sendo hoje um veterano e assim, tendo uma boa quantidade de arremessos disponíveis em nosso dataset. Outro motivo para sua escolha é o seu perfil de ações ofensivas, diferente de Curry, que como já vimos arremessa bolas de 3 e de 2 na mesma quantidade em sua carreira, Griffin predominantemente pontuou de perto da cesta em sua carreira, sendo conhecido por ser um jogador capaz de grande enterradas. Ele só veio adicionar a bola de 3 ao seu arsenal ofensivo nos últimos 3 a 4 anos e mesmo assim, em uma quantidade e qualidade muito inferiores se comparados a Curry.
+
+No gráfico abaixo podemos perceber sua preferência pela bola de 2 pontos:
+
+![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
+
+Os conjuntos de Treino e Teste de Blake Griffin possuem os seguintes formatos:
+
+	X_train: (8435, 160)
+	X_test: (2109, 160)
+	y_train: (8435,)
+	y_test: (2109,)
+	
+Random Fores obteve 68% de acurácia e 68% de F1 score. XGBOOST obteve 67% de acurácia e 63% de F1 score. Abaixo, a matrizes de confusão entre y_pred e y_test:
+
+
 
 # Conclusão
 
