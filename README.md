@@ -1083,10 +1083,10 @@ Os conjuntos de Treino e Teste do sub conjunto de arremessos do Stephen Curry fi
 
 Os conjuntos de Treino e Teste do sub conjunto de arremessos do Stephen Curry ficaram com os seguintes formatos:
 
-* X_train: (9252, 138)
-* X_test: (2313, 138)
-* y_train: (9252,)
-* y_test: (2313,)
+* X_train: (10634, 147)
+* X_test: (2659, 147)
+* y_train: (10634,)
+* y_test: (2659,)
 
 O número de atributos cresceu consideravelmente dos 25 originais para os 138 do sub conjunto selecionado. O princpal fator para tamanha mudança foi a aaplicação do Dummy Coding que transformou os atributos categóricos em numéricos para poderem ser compreendidos pelos modelos.
     
