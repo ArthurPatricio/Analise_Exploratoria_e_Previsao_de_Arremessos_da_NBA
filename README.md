@@ -732,7 +732,7 @@ O gráfico a seguir mostra todos os arremessos tentados nas 12 temporadas pelo t
 
 ![shot_type_bar_plot.png](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_bar_plot.png)
 
-O gráfico a seguir mostra todos os arremessos tentados nas 10 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos) e resultado do arremesso.
+O gráfico a seguir mostra todos os arremessos tentados nas 12 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos) e resultado do arremesso.
 
     # SHOT TYPE (MADE/MISSED) BAR PLOT
 
@@ -751,7 +751,7 @@ O gráfico a seguir mostra todos os arremessos tentados nas 10 temporadas pelo t
 
 ![shot_type_made_missed_bar_plot](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_made_missed_bar_plot.png)
 
-Análogo ao que foi feito com os gráficos de distribuição, como pode ser visto abaixo, plotando os gráficos de barra por tipo de arremesso vemos que proporcionalmente a quantidade de arremessos de 2 e 3 pontos é muito mais próxima na temporada 2020-21 do que era na temporada 2011-12.
+Análogo ao que foi feito com os gráficos de distribuição, como pode ser visto abaixo, plotando os gráficos de barra por tipo de arremesso vemos que proporcionalmente a quantidade de arremessos de 2 e 3 pontos é muito mais próxima na temporada 2020-21 do que era na temporada 2009-10.
 
     # SHOT TYPE BAR PLOT
 
@@ -835,7 +835,7 @@ A partir destre ponto o conjunto de dados foi tratado a fim de alimentar modelos
 
 # Sub Conjuntos de Dados
 
-Dada a dimensão do nosso conjunto principal de dados que possui, 1345097 registros e 25 atributos. Foi decidido trabalhar com os modelos de machine learning utilizando sub conjuntos de dados.
+Dada a dimensão do nosso conjunto principal de dados que possui, 2401273 registros e 25 atributos. Foi decidido trabalhar com os modelos de machine learning utilizando sub conjuntos de dados.
 
 Foram criadas duas funções 'choose_player' e 'choose_season'. 'choose_player' permite criar um sub conjunto de dados de um jogador da NBA. 'choose_season' permite criar um sub conjunto de dados de uma temporada da NBA.
 
@@ -1107,7 +1107,7 @@ Dentro do grupo de modelos supervisionados, utilizaremos os de classificação j
 
 # SVM
 
-O modelo SVM/SVC (Support Vector Classification) conseguiu atingir 66% de acurácia e 63% de F1 score. [2]
+O modelo SVM/SVC (Support Vector Classification) conseguiu atingir 66% de acurácia e 63% de F1 score. [3]
 
 Os melhores valores para os hiper-parâmetros utilizados foram: 
 
@@ -1123,7 +1123,7 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 
 # Decision Tree
 
-O modelo Decision Tree Classifier conseguiu atingir 66% de acurácia e 66% de F1 score. [3]
+O modelo Decision Tree Classifier conseguiu atingir 66% de acurácia e 66% de F1 score. [4]
 
 Os melhores valores para os hiper-parâmetros utilizados foram: 
 
@@ -1145,7 +1145,7 @@ Abaixo, pode-se ver a árvore de decisão do modelo treinado:
  
 # Random Forest
 
-O modelo Random Forest Classifier conseguiu atingir 70% de acurácia e 70% de F1 score. [4]
+O modelo Random Forest Classifier conseguiu atingir 70% de acurácia e 70% de F1 score. [5]
 
 Os melhores valores para os hiper-parâmetros utilizados foram: 
 
@@ -1170,7 +1170,7 @@ Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no
 
 # XGBOOST
 
-O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 71% de F1 score. [5]
+O modelo XGBOOST foi o que conseguiu melhores resultados, 72% de acurácia e 71% de F1 score. [6]
 
 Os melhores valores para os hiper-parâmetros utilizados foram:
 
@@ -1193,23 +1193,25 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 Após a avaliação de todos os modelos treinados, ficou claro que os modelos do tipo Comitê são os melhores entre os testados. Random Forest Classifier, que utiliza o método de bagging e XGBOOST, que utiliza boosting, foram os que obtiveram as melhores performances. Os resultados foram os esperados se considerarmos que os modelos do tipo Comitê são reconhecidamente bons para cenários onde temos um conjunto muito grande de dados e o problema é muito complexo. A complexidade do problema é um fator a ser bastante considerado pois, estamos tratando de de um tipo de evento, arremesso de basquete, que possui ínumeras variáveis que compõe e afetam o resultado.
 
 Esses resultados corroboram o favoritismo desses tipos de modelos para a previsão de arremessos. Resultados semelhantes foram encontrados por Brett Meehan em "Predicting NBA Shots" e Max Murakami-Moses em "Analysis of Machine Learning Models Predicting
-Basketball Shot Success". [6][7]
+Basketball Shot Success". [7][8]
 
 # Referências
 
     [1] Stephen Curry career stats. https://www.basketball-reference.com/players/c/curryst01.html, 2021.
+    
+    [2] NBA & ABA Career Leaders and Records for 3-Pt Field Goal Pct. https://www.basketball-reference.com/leaders/fg3_pct_career.html, 2021.
 
-    [2] Support Vector Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html, 2021.
+    [3] Support Vector Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html, 2021.
 
-    [3] Decision Tree Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html, 2021.
+    [4] Decision Tree Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html, 2021.
 
-    [4] Random Forest Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html, 2021.
+    [5] Random Forest Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html, 2021.
 
-    [5] XGBOOST. https://xgboost.readthedocs.io/en/latest/, 2021.
+    [6] XGBOOST. https://xgboost.readthedocs.io/en/latest/, 2021.
 
-    [6] B. Meehan. Predicting NBA Shots. http://cs229.stanford.edu/proj2017/final-reports/5132133.pdf, 2017.
+    [7] B. Meehan. Predicting NBA Shots. http://cs229.stanford.edu/proj2017/final-reports/5132133.pdf, 2017.
 
-    [7] M. Murakami-Moses. Analysis of Machine Learning Models Predicting Basketball Shot Success. https://www.the-iyrc.org/uploads/1/2/9/7/129787256/20_iyrc2020_35_final.pdf.
+    [8] M. Murakami-Moses. Analysis of Machine Learning Models Predicting Basketball Shot Success. https://www.the-iyrc.org/uploads/1/2/9/7/129787256/20_iyrc2020_35_final.pdf.
 
 
 
