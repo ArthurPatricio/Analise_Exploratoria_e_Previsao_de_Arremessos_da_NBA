@@ -713,7 +713,7 @@ Analisando as plotagens abaixo, distribuições tais como a anterior só que ago
     
 # 5. Tipos de Arremessos
     
-O gráfico a seguir mostra todos os arremessos tentados nas 10 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos)
+O gráfico a seguir mostra todos os arremessos tentados nas 12 temporadas pelo tipo de arremesso tentado (2 ou 3 pontos)
 
     # SHOT TYPE BAR PLOT
 
