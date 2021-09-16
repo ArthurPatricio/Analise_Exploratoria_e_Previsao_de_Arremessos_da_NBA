@@ -1188,37 +1188,41 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 
 ![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
 
-# Análise separada dos tipos de arremessos
+# Análise por tipo de arremesso
 
 Neste ponto, treinamos os modedelos com melhores performance, Random Forest e XGBOOST, com o conjunto de arremessos de 2 pontos e 3 pontos de Stephen Curry separadamente para analisar como isso afetará a performance dos modelos. Os valores dos hiper-parâmetros foram mantidos os mesmos para efeito de comparação.
 
 * Arremessos de 2 pontos:
 
-		Os conjuntos de Treino e Teste possuem os seguintes formatos:
+Os conjuntos de Treino e Teste possuem os seguintes formatos:
 
-		X_train: (5404, 139)
-		X_test: (1352, 139)
-		y_train: (5404,)
-		y_test: (1352,)
+X_train: (5404, 139)
+X_test: (1352, 139)
+y_train: (5404,)
+y_test: (1352,)
 	
-		* Random Fores obteve 67% de acurácia e 67% de F1 score. XGBOOST obteve 66% de acurácia e 68% de F1 score.
-		* Abaixo, a matriz de confusão entre y_pred e y_test:
+* Random Fores obteve 67% de acurácia e 67% de F1 score. XGBOOST obteve 66% de acurácia e 68% de F1 score.
+* Abaixo, a matriz de confusão entre y_pred e y_test:
 
-![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
+![confusion_matrix_RF_stephen_curry_2_points](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_RF_stephen_curry_2_points.png)
+
+![confusion_matrix_XGBOOST_stephen_curry_2_points](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST_stephen_curry_2_points.png)
 
 * Arremessos de 3 pontos:
 
-		Os conjuntos de Treino e Teste possuem os seguintes formatos:
-		
-		X_train: (5229, 106)
-		X_test: (1308, 106)
-		y_train: (5229,)
-		y_test: (1308,)
-		
-		* Random Fores obteve 64% de acurácia e 62% de F1 score. XGBOOST obteve 62% de acurácia e 49% de F1 score.
-		* Abaixo, a matriz de confusão entre y_pred e y_test:
+Os conjuntos de Treino e Teste possuem os seguintes formatos:
 
-![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
+X_train: (5229, 106)
+X_test: (1308, 106)
+y_train: (5229,)
+y_test: (1308,)
+		
+* Random Fores obteve 64% de acurácia e 62% de F1 score. XGBOOST obteve 62% de acurácia e 49% de F1 score.
+* Abaixo, a matriz de confusão entre y_pred e y_test:
+
+![confusion_matrix_RF_stephen_curry_3_points](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_RF_stephen_curry_3_points.png)
+
+![confusion_matrix_XGBOOST_stephen_curry_3_points](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST_stephen_curry_3_points.png)
 
 Os modelos obtiveram maior sucesso em prever o resultado dos arremessos de 2 pontos. A diferença provavelmente vem da natureza dos arremessos. Enquanto arremessos de 3 pontos são feitos a uma maior distância e maior variadade de posições em relação à cesta, bolas de 2 pontos principalmente NBA atual, como vimos anteriormente, são prioritariamente bolas "chutadas" perto da cesta. Isso leva a crer, que essa menor variação no escopo dos lances de 2 pontos e sua maior chance de serem convertidos, favoreçam para uma melhor previsibilidade.
 
@@ -1226,17 +1230,20 @@ Tendo conhecimento disso, foi decidido experimentar a novamente a performance de
 
 No gráfico abaixo podemos perceber sua preferência pela bola de 2 pontos:
 
-![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
+![shot_type_bar_plot_blake_griffin](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/shot_type_bar_plot_blake_griffin.png)
 
 Os conjuntos de Treino e Teste de Blake Griffin possuem os seguintes formatos:
 
-	X_train: (8435, 160)
-	X_test: (2109, 160)
-	y_train: (8435,)
-	y_test: (2109,)
+X_train: (8435, 160)
+X_test: (2109, 160)
+y_train: (8435,)
+y_test: (2109,)
 	
 Random Fores obteve 68% de acurácia e 68% de F1 score. XGBOOST obteve 67% de acurácia e 63% de F1 score. Abaixo, a matrizes de confusão entre y_pred e y_test:
 
+![confusion_matrix_RF_blake_griffin](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_RF_blake_griffin.png)
+
+![confusion_matrix_XGBOOST_blake_griffin](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST_blake_griffin.png)
 
 
 # Conclusão
