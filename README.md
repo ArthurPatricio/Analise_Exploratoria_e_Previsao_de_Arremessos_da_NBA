@@ -1218,7 +1218,7 @@ Os conjuntos de Treino e Teste possuem os seguintes formatos:
 * y_train: (5229,)
 * y_test: (1308,)
 		
-Random Fores obteve 64% de acurácia e 62% de F1 score. XGBOOST obteve 62% de acurácia e 49% de F1 score.
+Random Forest obteve 64% de acurácia e 62% de F1 score. XGBOOST obteve 62% de acurácia e 49% de F1 score.
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
