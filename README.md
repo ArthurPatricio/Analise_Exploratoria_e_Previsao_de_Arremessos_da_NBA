@@ -1196,10 +1196,10 @@ Neste ponto, treinamos os modedelos com melhores performance, Random Forest e XG
 
 Os conjuntos de Treino e Teste possuem os seguintes formatos:
 
-X_train: (5404, 139)
-X_test: (1352, 139)
-y_train: (5404,)
-y_test: (1352,)
+* X_train: (5404, 139)
+* X_test: (1352, 139)
+* y_train: (5404,)
+* y_test: (1352,)
 	
 * Random Fores obteve 67% de acurácia e 67% de F1 score. XGBOOST obteve 66% de acurácia e 68% de F1 score.
 * Abaixo, a matriz de confusão entre y_pred e y_test:
@@ -1212,10 +1212,10 @@ y_test: (1352,)
 
 Os conjuntos de Treino e Teste possuem os seguintes formatos:
 
-X_train: (5229, 106)
-X_test: (1308, 106)
-y_train: (5229,)
-y_test: (1308,)
+* X_train: (5229, 106)
+* X_test: (1308, 106)
+* y_train: (5229,)
+* y_test: (1308,)
 		
 * Random Fores obteve 64% de acurácia e 62% de F1 score. XGBOOST obteve 62% de acurácia e 49% de F1 score.
 * Abaixo, a matriz de confusão entre y_pred e y_test:
@@ -1234,10 +1234,10 @@ No gráfico abaixo podemos perceber sua preferência pela bola de 2 pontos:
 
 Os conjuntos de Treino e Teste de Blake Griffin possuem os seguintes formatos:
 
-	* X_train: (8435, 160)
-	* X_test: (2109, 160)
-	* y_train: (8435,)
-	* y_test: (2109,)
+* X_train: (8435, 160)
+* X_test: (2109, 160)
+* y_train: (8435,)
+* y_test: (2109,)
 	
 Random Fores obteve 68% de acurácia e 68% de F1 score. XGBOOST obteve 67% de acurácia e 63% de F1 score. Abaixo, a matrizes de confusão entre y_pred e y_test:
 
