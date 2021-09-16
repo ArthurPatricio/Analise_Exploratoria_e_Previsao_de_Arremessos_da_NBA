@@ -1262,21 +1262,21 @@ Outro resultado interessante foi perceber que comparando as previsões dos arrem
 
 # Referências
 
-    [1] Stephen Curry career stats. https://www.basketball-reference.com/players/c/curryst01.html, 2021.
-    
-    [2] NBA & ABA Career Leaders and Records for 3-Pt Field Goal Pct. https://www.basketball-reference.com/leaders/fg3_pct_career.html, 2021.
+[1] Stephen Curry career stats. https://www.basketball-reference.com/players/c/curryst01.html, 2021.
 
-    [3] Support Vector Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html, 2021.
+[2] NBA & ABA Career Leaders and Records for 3-Pt Field Goal Pct. https://www.basketball-reference.com/leaders/fg3_pct_career.html, 2021.
 
-    [4] Decision Tree Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html, 2021.
+[3] Support Vector Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html, 2021.
 
-    [5] Random Forest Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html, 2021.
+[4] Decision Tree Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html, 2021.
 
-    [6] XGBOOST. https://xgboost.readthedocs.io/en/latest/, 2021.
+[5] Random Forest Classifier. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html, 2021.
 
-    [7] B. Meehan. Predicting NBA Shots. http://cs229.stanford.edu/proj2017/final-reports/5132133.pdf, 2017.
+[6] XGBOOST. https://xgboost.readthedocs.io/en/latest/, 2021.
 
-    [8] M. Murakami-Moses. Analysis of Machine Learning Models Predicting Basketball Shot Success. https://www.the-iyrc.org/uploads/1/2/9/7/129787256/20_iyrc2020_35_final.pdf.
+[7] B. Meehan. Predicting NBA Shots. http://cs229.stanford.edu/proj2017/final-reports/5132133.pdf, 2017.
+
+[8] M. Murakami-Moses. Analysis of Machine Learning Models Predicting Basketball Shot Success. https://www.the-iyrc.org/uploads/1/2/9/7/129787256/20_iyrc2020_35_final.pdf.
 
 
 
