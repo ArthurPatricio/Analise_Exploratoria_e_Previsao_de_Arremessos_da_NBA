@@ -1234,10 +1234,10 @@ No gráfico abaixo podemos perceber sua preferência pela bola de 2 pontos:
 
 Os conjuntos de Treino e Teste de Blake Griffin possuem os seguintes formatos:
 
-X_train: (8435, 160)
-X_test: (2109, 160)
-y_train: (8435,)
-y_test: (2109,)
+	* X_train: (8435, 160)
+	* X_test: (2109, 160)
+	* y_train: (8435,)
+	* y_test: (2109,)
 	
 Random Fores obteve 68% de acurácia e 68% de F1 score. XGBOOST obteve 67% de acurácia e 63% de F1 score. Abaixo, a matrizes de confusão entre y_pred e y_test:
 
