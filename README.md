@@ -1247,13 +1247,18 @@ Random Fores obteve 68% de acurácia e 68% de F1 score. XGBOOST obteve 67% de ac
 
 ![confusion_matrix_XGBOOST_blake_griffin](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST_blake_griffin.png)
 
+Se comparado com as previsões usando todos os arremessos de Curry para Treino e Teste, as previsões utilizando os arremessos de Griffin obtiveram melhor performance. Esse resultado aliado às análises anteriores nos leva a crer que conjuntos com arremessos com menor variação, estes estando dentro do conjunto de arremessos de 2 pontos possuem maior previsibilidade do que arremessos com maior variação como os de 3 pontos.
+
 
 # Conclusão
 
 Após a avaliação de todos os modelos treinados, ficou claro que os modelos do tipo Comitê são os melhores entre os testados. Random Forest Classifier, que utiliza o método de bagging e XGBOOST, que utiliza boosting, foram os que obtiveram as melhores performances. Os resultados foram os esperados se considerarmos que os modelos do tipo Comitê são reconhecidamente bons para cenários onde temos um conjunto muito grande de dados e o problema é muito complexo. A complexidade do problema é um fator a ser bastante considerado pois, estamos tratando de de um tipo de evento, arremesso de basquete, que possui ínumeras variáveis que compõe e afetam o resultado.
 
-Esses resultados corroboram o favoritismo desses tipos de modelos para a previsão de arremessos. Resultados semelhantes foram encontrados por Brett Meehan em "Predicting NBA Shots" e Max Murakami-Moses em "Analysis of Machine Learning Models Predicting
-Basketball Shot Success". [7][8]
+Esses resultados corroboram o favoritismo desses tipos de modelos para a previsão de arremessos. Resultados semelhantes foram encontrados por Brett Meehan em "Predicting NBA Shots" e Max Murakami-Moses em "Analysis of Machine Learning Models Predicting Basketball Shot Success". Vale reassaltar que, apesar de próximos e indicarem um mesmo caminho, os resultados obtidos nesse estudo e nos mencionados foram diferentes e isso era esperado, visto que estamos falando de bases de dados que se diferenciam em quandidade e qualidade de atributos e quantidade de registros disponíveis. Além do fato principal que aqui, focamos em realizar o treinmanto de modelos usando dados de jogadores separadamente euquanto os outros trabalharam, com o conjunto de uma ou mais temporadas inteiras para o treinamento e previsão de seus modelos.  [7][8]
+
+Outro resultado interessante foi perceber que comparando as previsões dos arremessos de 2 e 3 pontos de Stephen Curry separadamante e depois compararando com as previsões dos arremessos de Blake Griffin, que arremessou quase que exclusivamente bolas de 2 na maior parte de sua carreira, que os modelos cujo os conjuntos de Treino e Teste possuiam em sua maioria ou exclusivamente arremressos de 2 pontos e de um tipo bem específico, obtiveram performance superior comparados aos outros cenários apresentados. Isso nos leva a crer que a grande complexidade e variedade associada a um arremesso de basquete e todos os fatores que entram em consideração, limitam a performance dos modelos de machine learning e que um caminho possível para obter melhores resultados seja a segmentação dos arremessos em suas diferentes categorias e tratá-los como problemas de previsão independentes.
+
+
 
 # Referências
 
