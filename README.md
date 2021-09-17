@@ -1228,7 +1228,7 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 
 Os modelos obtiveram maior sucesso em prever o resultado dos arremessos de 2 pontos. A diferença provavelmente vem da natureza dos arremessos. Enquanto arremessos de 3 pontos são feitos a uma maior distância e maior variadade de posições em relação à cesta, bolas de 2 pontos principalmente NBA atual, como vimos anteriormente, são prioritariamente bolas "chutadas" perto da cesta. Isso leva a crer, que essa menor variação no escopo dos lances de 2 pontos e sua maior chance de serem convertidos, favoreçam para uma melhor previsibilidade.
 
-#Comparação com outros jogadores
+# Comparação com outros jogadores
 
 Tendo conhecimento disso, foi decidido experimentar a novamente a performance de Random Forest e XGBOOST para todos os arremessos de um novo atleta. O jogador escolhido foi Blake Griffin. Griffin estreou na liga na mesma temporada de Stephen Curry (2009-10) sendo hoje um veterano e assim, tendo uma boa quantidade de arremessos disponíveis em nosso dataset. Outro motivo para sua escolha é o seu perfil de ações ofensivas, diferente de Curry, que como já vimos arremessa bolas de 3 e de 2 na mesma quantidade em sua carreira, Griffin predominantemente pontuou de perto da cesta em sua carreira, sendo conhecido por ser um jogador capaz de grande enterradas. Ele só veio adicionar a bola de 3 ao seu arsenal ofensivo nos últimos 3 a 4 anos e mesmo assim, em uma quantidade e qualidade muito inferiores se comparados a Curry.
 
