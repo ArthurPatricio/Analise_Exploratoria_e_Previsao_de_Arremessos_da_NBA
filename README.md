@@ -153,7 +153,7 @@ Os 12 Dataframes são concatenados em um único novo Dataframe chamado 'nba_shot
 
 # Análise Inicial de nba_shots
 
-    O dataset nba_shots possui 2401273 registros e 25 atributos.
+O dataset nba_shots possui 2401273 registros e 25 atributos.
 
     #Get nba_shots dataframe shape
 
