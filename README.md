@@ -1153,7 +1153,7 @@ Os melhores valores para os hiper-parâmetros utilizados foram:
 * min_samples_leaf = 8
 * min_samples_split = 10
 * max_features = 'auto' 
-* n_estimators = 100
+* n_estimators = 5000
 * n_jobs = 50
 * verbose = 1
 
@@ -1175,14 +1175,18 @@ O modelo XGBOOST foi o que conseguiu melhores resultados, 65% de acurácia e 61%
 Os melhores valores para os hiper-parâmetros utilizados foram:
 
 * random_state = 100
-* n_estimators = 2000
+* n_estimators = 5000 
 * objective = "reg:logistic"
 * use_label_encoder = False
-* booster = 'gbtree'
-* alpha = 10
-* max_depth = 8
-* gamma = 1e-2
-* colsample_bytree = 0.5
+* booster = 'gbtree' 
+* alpha = 10 
+* max_depth = 12
+* gamma = 0
+* colsample_bytree = 0.8
+* min_child_weight = 5
+* learning_rate = 0.01
+* scale_pos_weight  =  1
+
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
