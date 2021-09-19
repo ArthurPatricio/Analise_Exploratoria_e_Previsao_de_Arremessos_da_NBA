@@ -828,7 +828,7 @@ Média Terceiro Período: 268154/(320667 + 268154) = 0,4554 -> 45,54%
  
 Média Quarto Período: 253673/(316060 + 253673) = 0,4452 -> 44,52%
     
-# Previsão de Arremessos utilizando modelos de Machine Learming
+# 8. Previsão de Arremessos utilizando modelos de Machine Learming
 
 A partir destre ponto o conjunto de dados foi tratado a fim de alimentar modelos de Machine Learning com o intuito de prever o resultado de arremessos.
 
@@ -1252,7 +1252,7 @@ Random Fores obteve 68% de acurácia e 68% de F1 score. XGBOOST obteve 67% de ac
 Se comparado com as previsões usando todos os arremessos de Curry para Treino e Teste, as previsões utilizando os arremessos de Griffin obtiveram melhor performance. Esse resultado aliado às análises anteriores nos leva a crer que conjuntos com arremessos com menor variação, estes estando dentro do conjunto de arremessos de 2 pontos possuem maior previsibilidade do que arremessos com maior variação como os de 3 pontos.
 
 
-# Conclusão
+# 9. Conclusão
 
 Após a avaliação de todos os modelos treinados, ficou claro que os modelos do tipo Comitê são os melhores entre os testados. Random Forest Classifier, que utiliza o método de bagging e XGBOOST, que utiliza boosting, foram os que obtiveram as melhores performances. Os resultados foram os esperados se considerarmos que os modelos do tipo Comitê são reconhecidamente bons para cenários onde temos um conjunto muito grande de dados e o problema é muito complexo. A complexidade do problema é um fator a ser bastante considerado pois, estamos tratando de de um tipo de evento, arremesso de basquete, que possui ínumeras variáveis que compõe e afetam o resultado.
 
