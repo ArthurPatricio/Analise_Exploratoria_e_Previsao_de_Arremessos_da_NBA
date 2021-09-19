@@ -1157,8 +1157,6 @@ Os melhores valores para os hiper-parâmetros utilizados foram:
 * n_jobs = 50
 * verbose = 1
 
-Entretando, se adicionado o hiper-parâmetro max_depth (por padrão possui valor nulo), que foi usado no modelo de Árvore de Desisão, ocorre uma queda tanto da acurácia como do F1 score, já que este hiper-parâmetro define um limite para a profundidade das árvores a serem treinadas. Normalmente esti tipo de limitação é definida para evitar o overfitting do modelo. Por exemplo, para max_depth = 10, acurárica e F1 score caem por volta de 67% e para max_depth = 5, ambos ficam em torno de 65%.
-
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
 ![confusion_matrix_RF](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_RF.png)
@@ -1166,6 +1164,19 @@ Abaixo, a matriz de confusão entre y_pred e y_test:
 Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no treino do modelo:
 
 ![Feature_Importances_RF](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/Feature_Importances_RF.png)
+
+Segue abaixo a lista dos atributos mais significativos para Random Forest:
+
+1º - ACTION_TYPE_Jump Shot
+2º - SHOT_DISTANCE
+3º - LOC_Y
+4º - ACTION_TYPE_Pullup Jump shot
+5º - GAME_ID
+6º - GAME_DATE
+7º - ACTION_TYPE_Layup Shot
+8º - LOC_X
+
+Podemos notar que 3 dos 8 atributos mais significativos (ACTION_TYPE_Jump Shot, ACTION_TYPE_Pullup Jump shot e ACTION_TYPE_Layup Shot)  são relacionados aos tipos arremessos que Stephen Curry tentou e, conhecendo as características ofensivas do atleta, já mencionadas, sabemos que esses estão entre os tipos de arremessos mais comuns tentados por Curry. Outro ponto interessante é a presença de dos atributos espaciais, SHOT_DISTANCE dá a distância do ponto onte foi feito o arremesso até a cesta. Já LOC_X e LOC_Y formam o par de coordenadas de onde os arremesoss foram feitos. GAME_ID é o identificador único dos jogos e GAME_DATE é a data de quando os jogos ocorreram.
 
 
 # XGBOOST
@@ -1191,6 +1202,23 @@ Os melhores valores para os hiper-parâmetros utilizados foram:
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
 ![confusion_matrix_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_XGBOOST.png)
+
+Abaixo, pode-se ver a plotagem da importância dos atribudos do dataset usado no treino do modelo:
+
+![Feature_Importances_XGBOOST](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/Feature_Importances_XGBOOST.png)
+
+Segue abaixo a lista dos atributos mais significativos para XGBOOST:
+
+1º - GAME_ID
+2º - GAME_EVENT_ID
+3º - LOC_X
+4º - LOC_Y
+5º - SECONDS_REMAINING
+6º - MINUTES_REMAINING
+7º - SHOT_DISTANCE
+8º - GAME_DATE
+
+Assim como no caso de Random Forest temos os atributos espaciais, LOC_X, LOC_Y e SHOT_DISTANCE entre os mais importantes para o modelo. GAME_ID e GAME_DATE também aparecem. As diferenças começam na presença de GAME_EVENT_ID, esse atributo informa qual a posição(ordem) desse evento na contagem de todos os eventos de um jogo. Os outros atribtuos que aparecem apenas aqui são MINUTES_REMAINING E SECONDS_REMAINING, eles nos informam os minutos e segundos que faltam para o fim do quarto, sendo assim atributos temporais.
 
 # Análise por tipo de arremesso
 
