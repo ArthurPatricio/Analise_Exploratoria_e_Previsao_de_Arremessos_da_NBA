@@ -828,7 +828,7 @@ Média Terceiro Período: 268154/(320667 + 268154) = 0,4554 -> 45,54%
  
 Média Quarto Período: 253673/(316060 + 253673) = 0,4452 -> 44,52%
     
-# 8. Previsão de Arremessos utilizando modelos de Machine Learming
+# Previsão de Arremessos utilizando modelos de Machine Learming
 
 A partir destre ponto o conjunto de dados foi tratado a fim de alimentar modelos de Machine Learning com o intuito de prever o resultado de arremessos.
 
