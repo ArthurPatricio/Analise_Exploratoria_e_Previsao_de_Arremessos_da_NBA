@@ -364,9 +364,9 @@ De ínicio foram plotados todos os arremessos tentados na temporada 2020-21 de 3
   
 # 2. Arremessos Acertados por Temporada
 
-Abaixo temos as plotagens utilizando a função .hexbin da biblioteca matplotlib.
+Abaixo, temos as plotagens utilizando a função .hexbin da biblioteca matplotlib.
 
-Nessa sequência de gráficos possível notar como o arremesso de 3 pontos se tornou cada vez mais o arremesso* mais popular na liga com o passar das temporadas.
+Nessa sequência de gráficos é possível notar como o arremesso de 3 pontos se tornou cada vez mais o arremesso* mais popular na liga com o passar das temporadas.
 
 *Arremessos não incluem ações ofensivas como bandejas e enterradas, que são feitas próximas da cesta e que continuam proeminentes na liga como pode ser notado em todas as imagens.
 
@@ -589,7 +589,7 @@ Nessa sequência de gráficos possível notar como o arremesso de 3 pontos se to
 
 # 3. Outras Visualizações de Arremessos
 
-Os dados obtidos permitem ainda outras plotagens dos arremessos a seguir são mostradas 3 diferentes formas de enxergar os arremessos de acordo com sua posição em quadra.
+Os dados obtidos permitem ainda outras plotagens dos arremessos. A seguir, são mostradas 3 diferentes formas de enxergar os arremessos de acordo com sua posição em quadra.
     
 Arremessos acertados por região da quadra
 
@@ -657,15 +657,13 @@ O atributo 'SHOT_ZONE_BASIC' oferece regiões da quadra, diferentes das presente
     
 ![2020-21_regular_season_shots_made_per_zone_area_basic](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/2020-21_regular_season_shots_made_per_zone_area_basic.png)
 
-Os três gráficos acima nos mostram como os arremessos de 3 pontos se tornaram a principal forma de ate
-
 # 4. Distribuição de arrmessos por distância e tipo de Arremesso (2 ou 3 pontos)
 
 O gráfico abaixo apresenta a distribuição dos arremessos das 12 temporadas em análise, pela distância em que os arremessos foram feitos e pelo tipo de arremesso (2 ou 3 pontos).
 
 Nele nota-se ainda o predomínio dos arremessos de 2 pontos, bandejas ou enterradas feitos bem próximos da cesta. Com o arremesso de longa distância, de 3 pontos, já com quantidade considerável.
 
-Nos gráficos a seguir  onde comparamos as distribuições da primeira e útima do nosso dataset, vemos que hoje, há o predomínio da bola lonfa, de 3 pontos.
+Nos gráficos a seguir  onde comparamos as distribuições da primeira e última temporadas do nosso dataset, vemos que hoje, há o predomínio da bola longa, de 3 pontos.
 
     # SHOT DISTANCE DISTRIBUTION PLOT
 
@@ -832,16 +830,16 @@ Média Quarto Período: 253673/(316060 + 253673) = 0,4452 -> 44,52%
     
 # Previsão de Arremessos utilizando modelos de Machine Learming
 
-A partir destre ponto o conjunto de dados foi tratado a fim de alimentar modelos de Machine Learning com o intuito de prever o resultado de arremessos.
+A partir deste ponto o conjunto de dados foi tratado a fim de alimentar modelos de Machine Learning com o intuito de prever o resultado de arremessos.
 
 
 # Sub Conjuntos de Dados
 
 Dada a dimensão do nosso conjunto principal de dados que possui, 2401273 registros e 25 atributos. Foi decidido trabalhar com os modelos de machine learning utilizando sub conjuntos de dados.
 
-Foram criadas duas funções 'choose_player' e 'choose_season'. 'choose_player' permite criar um sub conjunto de dados de um jogador da NBA. 'choose_season' permite criar um sub conjunto de dados de uma temporada da NBA.
+Foram criadas duas funções 'choose_player', 'choose_season' e 'choose_player_and_shot_type'. 'choose_player' permite criar um sub conjunto de dados de um jogador da NBA. 'choose_season' permite criar um sub conjunto de dados de uma temporada da NBA. 'choose_player_and_shot_type' permite criar um sub conjunto de dados de um jogador de NBA para apenas um tipo de arremesso feito por ele (arremessos de 2 ou 3 pontos).
 
-Em ambas funções, os sub conjuntos sofrem as seguintes operações:
+Nas três funções, os sub conjuntos sofrem as seguintes operações:
     
 * Redução de Dimensão: Os atributos 'PLAYER_NAME', 'EVENT_TYPE' e 'TEAM_NAME' são retirados por serem redundantes em informação fornecida com os atributos 'PLAYER_ID', 'SHOT_MADE_FLAG' e 'TEAM_ID' respectivamente.
 
@@ -936,9 +934,9 @@ A diferença nas médias é absolutamente normal dada a natureza do jogo de basq
 
 Hoje, os times notam que esse maior risco vale ser encarado. Tendo em consideração as médias do Curry. Como calculado, ele acerta em média 51,92% dos seus arremessos de 2 pontos, em um cenário em que tente 10 desses arremessos, ele acertaria 5 e isso resultaria num total de 10 pontos. Já se fizer as mesmas 10 tentativas para a bola de 3, com sua média de 43,29%, acertaria 4 bolas que somariam um total de 12 pontos.
 
-Obviamente que esse cenário que ignora dezenas de fatores que levam ao sucesso ou não de um arremesso em um jogo oficial de basquete na NBA. Porém, essa lógica é a base do pensamento que levam hoje muitos dos times e sua comissões técnicas a priorizarem a bola de 3 mesmo que isso faça com que a média de acerto dos arremessos caia.
+Obviamente que esse cenário ignora dezenas de fatores que levam ao sucesso ou não de um arremesso em um jogo oficial de basquete na NBA. Porém, essa lógica é a base do pensamento que levam hoje muitos dos times e sua comissões técnicas a priorizarem a bola de 3 mesmo que isso faça com que a média de acerto dos arremessos caia.
 
-Diferente do que foi visto para o dataset geral, se analizarmos a performance de acerto de arremessos por período de jogo, Curry não aparenta seguir o mesmo padrão que o resto da liga, onde as médias de acerto caem com o avançar do jogo.
+Diferente do que foi visto para o dataset geral, se analizarmos a performance de acerto de arremessos por período de jogo, Curry não aparenta seguir o mesmo padrão que o resto da liga, onde as médias de acerto caem com o avançar do jogo. O que nos leeva a crer que este não será um fator relevante para os modelos a serem treinados.
 
     # SHOT PER GAME PERIOD BAR PLOT STEPHEN CURRY
 
@@ -1078,7 +1076,61 @@ Função choose_season
 
     X_train, X_test, y_train, y_test = choose_season('2020-21')
     
-    
+Função choose_player_and_shot_type
+
+	# Due to the large amount of the dataset, everything past this point you be done per player. The function below creates a sub dataset from nba_shots with the data form the chosen player. 
+
+	def choose_player_and_shot_type (player_name, shot_type):
+	    player_shots = nba_shots[(nba_shots['PLAYER_NAME'] == player_name) & (nba_shots['SHOT_TYPE'] == shot_type)]
+	    print(player_shots.head())
+
+	    # Dimensional Reduction: Columns PLAYER_ID and PLAYER_NAME carry the same type of information, PLAYER_NAME is going to be droped. 
+	    # The same happens to columns EVENT_TYPE and SHOT_MADE_FLAG, EVENT_TYPE is going to be droped.
+	    # It also happens for TEAM_ID and TEAM_NAME, TEAM_NAME is going to be droped.
+
+	    nba_shots_ml = player_shots.drop(['PLAYER_NAME', 'EVENT_TYPE', 'TEAM_NAME'], axis = 1)
+
+	    # Apply Dummy Coding to the categorial attributes of the dataset
+
+	    categorical_columns = ['GRID_TYPE', 'ACTION_TYPE', 'SHOT_TYPE', 'SHOT_ZONE_BASIC', 
+	    'SHOT_ZONE_AREA', 'SHOT_ZONE_RANGE', 'HTM', 'VTM', 'SEASON_ID']
+
+	    for i in categorical_columns:
+
+		nba_shots_ml = pd.get_dummies(nba_shots_ml, columns=[i], drop_first=True)
+
+	    #Train/Test split
+
+	    X = nba_shots_ml.loc[:, nba_shots_ml.columns != 'SHOT_MADE_FLAG']
+	    y = nba_shots_ml['SHOT_MADE_FLAG']
+	    X_train, X_test, y_train, y_test = train_test_split(X, y, 
+								test_size= 0.2, 
+								random_state = 100, 
+								stratify = y,
+								)
+
+	    # Check columns with variance equal to zero and drop them
+
+	    zero_var_filter = VarianceThreshold()
+	    X_train = zero_var_filter.fit_transform(X_train)
+	    X_test = zero_var_filter.transform(X_test)
+	    print('X_train e X_test possuíam', (zero_var_filter.variances_ == 0).sum(), 'atributo(s) com variância igual a zero')
+
+	    print('X_train:', X_train.shape)
+	    print('X_test:', X_test.shape)
+	    print('y_train:', y_train.shape)
+	    print('y_test:', y_test.shape)
+
+	    # Normalize the data
+
+	    scaler = StandardScaler().fit(X_train)
+	    X_train = scaler.transform(X_train)
+	    X_test = scaler.transform(X_test)
+
+	    return X_train, X_test, y_train, y_test
+
+	X_train, X_test, y_train, y_test = choose_player_and_shot_type('Stephen Curry', '3PT Field Goal')
+
 Os conjuntos de Treino e Teste do sub conjunto de arremessos do Stephen Curry ficaram com os seguintes formatos:
 
 * X_train e X_test possuíam 4 atributo(s) com variância igual a zero
@@ -1090,7 +1142,7 @@ Os conjuntos de Treino e Teste do sub conjunto de arremessos do Stephen Curry fi
 * y_train: (10634,)
 * y_test: (2659,)
 
-O número de atributos cresceu consideravelmente dos 25 originais para os 138 do sub conjunto selecionado. O princpal fator para tamanha mudança foi a aaplicação do Dummy Coding que transformou os atributos categóricos em numéricos para poderem ser compreendidos pelos modelos.
+O número de atributos cresceu consideravelmente dos 25 originais para os 138 do sub conjunto selecionado. O princpal fator para tamanha mudança foi a aplicação do Dummy Coding que transformou os atributos categóricos em numéricos para poderem ser compreendidos pelos modelos.
     
 
 Para todos os modelos treinados foi utilizado o GridSaerchCV do Sklearn para realizar a tunagem de Hiper-parâmetros. Foi realizada a busca pelos Hiper-parâmetros que resultassem na melhor acurácia.
@@ -1133,8 +1185,6 @@ Os melhores valores para os hiper-parâmetros utilizados foram:
 * max_depth = 5  
 * min_samples_leaf = 5
 * min_samples_split = 10
-
-Durante a etapa de tunagem de hiper-parâmetros, o modelo chegou a alcançar 72% de acurácia e F1 escore com max_depth = 20, min_samples_leaf = 1 e min_samples_split=2. Apesar do resultado superior, tais valores para estes hiper-parâmetros podem significar a criação de uma árvora de decisão muito especializada no conjunto de dados de treino.
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
@@ -1224,7 +1274,7 @@ Assim como no caso de Random Forest temos os atributos espaciais, LOC_X, LOC_Y e
 
 # Análise por tipo de arremesso
 
-Neste ponto, treinamos os modedelos com melhores performance, Random Forest e XGBOOST, com o conjunto de arremessos de 2 pontos e 3 pontos de Stephen Curry separadamente para analisar como isso afetará a performance dos modelos. Os valores dos hiper-parâmetros foram mantidos os mesmos para efeito de comparação.
+Neste ponto, treinamos os modedelos com melhores performances, Random Forest e XGBOOST, com o conjunto de arremessos de 2 pontos e 3 pontos de Stephen Curry separadamente para analisar como isso afetará a performance dos modelos. Os valores dos hiper-parâmetros foram mantidos os mesmos para efeito de comparação.
 
 * Arremessos de 2 pontos:
 
@@ -1235,7 +1285,7 @@ Os conjuntos de Treino e Teste possuem os seguintes formatos:
 * y_train: (5404,)
 * y_test: (1352,)
 	
-Random Fores obteve 67% de acurácia e 67% de F1 score. XGBOOST obteve 66% de acurácia e 68% de F1 score.
+Random Forest obteve 67% de acurácia e 67% de F1 score. XGBOOST obteve 66% de acurácia e 68% de F1 score.
 
 Abaixo, a matriz de confusão entre y_pred e y_test:
 
@@ -1264,7 +1314,7 @@ Os modelos obtiveram maior sucesso em prever o resultado dos arremessos de 2 pon
 
 # Comparação com outros jogadores
 
-Tendo conhecimento dda diferença de resultados entre os arremessos, foi decidido experimentar a novamente a performance de Random Forest e XGBOOST para todos os arremessos de um novo atleta. O jogador escolhido foi Blake Griffin. Griffin estreou na liga na mesma temporada de Stephen Curry (2009-10) sendo hoje um veterano e assim, tendo uma boa quantidade de arremessos disponíveis em nosso dataset. Outro motivo para sua escolha é o seu perfil de ações ofensivas, diferente de Curry, que como já vimos arremessa bolas de 3 e de 2 na mesma quantidade em sua carreira, Griffin predominantemente pontuou de perto da cesta em sua carreira, sendo conhecido por ser um jogador capaz de grande enterradas. Ele só veio adicionar a bola de 3 ao seu arsenal ofensivo nos últimos 3 a 4 anos e mesmo assim, em uma quantidade e qualidade muito inferiores se comparados a Curry.
+Tendo conhecimento da diferença de resultados entre os arremessos, foi decidido experimentar a novamente a performance de Random Forest e XGBOOST para todos os arremessos de um novo atleta. O jogador escolhido foi Blake Griffin. Griffin estreou na liga na mesma temporada de Stephen Curry (2009-10) sendo hoje um veterano e assim, tendo uma boa quantidade de arremessos disponíveis em nosso dataset. Outro motivo para sua escolha é o seu perfil de ações ofensivas, diferente de Curry, que como já vimos arremessa bolas de 3 e de 2 na mesma quantidade em sua carreira, Griffin predominantemente pontuou de perto da cesta em sua carreira, sendo conhecido por ser um jogador capaz de grande enterradas. Ele só veio adicionar a bola de 3 ao seu arsenal ofensivo nos últimos 3 a 4 anos e mesmo assim, em uma quantidade e qualidade muito inferiores se comparados a Curry.
 
 No gráfico abaixo podemos perceber sua preferência pela bola de 2 pontos:
 
@@ -1277,7 +1327,7 @@ Os conjuntos de Treino e Teste de Blake Griffin possuem os seguintes formatos:
 * y_train: (8435,)
 * y_test: (2109,)
 	
-Random Fores obteve 68% de acurácia e 68% de F1 score. XGBOOST obteve 67% de acurácia e 63% de F1 score. Abaixo, a matrizes de confusão entre y_pred e y_test:
+Random Forest obteve 68% de acurácia e 68% de F1 score. XGBOOST obteve 67% de acurácia e 63% de F1 score. Abaixo, a matrizes de confusão entre y_pred e y_test:
 
 ![confusion_matrix_RF_blake_griffin](https://github.com/ArthurPatricio/Analise_Exploratoria_e_Previsao_de_Arremessos_da_NBA/blob/main/Images/confusion_matrix_RF_blake_griffin.png)
 
