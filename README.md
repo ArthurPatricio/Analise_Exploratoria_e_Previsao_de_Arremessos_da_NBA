@@ -1,4 +1,4 @@
-# Alou Análise Exploratória e Previsão de Arremessos da NBA
+# Análise Exploratória e Previsão de Arremessos da NBA
 
 # Objetivo
 
