@@ -1,6 +1,6 @@
 # Análise Exploratória e Previsão de Arremessos da NBA
 
-# Objetivo asdhajsdhajsd
+# Objetivo
 
 
 * Este projeto visa primeiramente, realizar uma análise exploratória dos dados obtidos das últimas 12 temporadas regulares da NBA (2009-10 a 2020-21) e treinar diferentes modelos de machine learning com o intuito de prever se um arremesso é bem-sucedido ou não.
